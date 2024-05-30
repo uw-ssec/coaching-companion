@@ -1,0 +1,26 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+{
+    "image":"ghcr.io/uw-ssec/base-ssec-project:latest",
+  
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "ms-toolsai.jupyter",
+          "ms-python.python"
+        ]
+      },
+      "codespaces": {
+        "openFiles": [
+          "db_test.ipynb"
+        ]
+      }
+    },
+    "hostRequirements": {
+        "cpus": 2,
+        "memory": "8gb",
+        "storage": "32gb"
+    },
+    "postCreateCommand": 
+      "sh .devcontainer/postBuild.sh"
+  }
+  
