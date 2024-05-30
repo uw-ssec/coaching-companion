@@ -6,3 +6,5 @@ dependencies:
   - pip
   - mysql-connector-python 
   - psycopg2-binary
+  - nox
+  - pre-commit
