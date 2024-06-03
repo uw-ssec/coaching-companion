@@ -4,6 +4,7 @@ channels:
 dependencies:
   - python>=3.12
   - pip
+  - django
   - mysql-connector-python 
   - psycopg2-binary
   - nox
