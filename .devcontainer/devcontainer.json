@@ -21,10 +21,6 @@
         "storage": "32gb"
     },
     "postCreateCommand": 
-    "sh .devcontainer/postBuild.sh",
-    "features": {
-        "ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {},
-        "ghcr.io/devcontainers-contrib/features/apt-packages:1": {}
-    }
+    "sh .devcontainer/postBuild.sh"
   }
   
