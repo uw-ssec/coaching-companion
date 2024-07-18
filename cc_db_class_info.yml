@@ -1,0 +1,481 @@
+vce_components_meta:
+  AWSDashboard:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Access:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  AccreditationCertificate:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  AccreditationSubmission:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ActionPlans:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  AddPlayByPlay:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Alias:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Annotations:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  AssessmentsClassroom:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  AssessmentsDashbaord:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  AssessmentsEvaluation:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  AssessmentsLister:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  AssessmentsRating:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  AssessmentsReport:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  AssessmentsReportClassroom:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  AssessmentsSite:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Assets:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Assignments:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  CoachingPartnership:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  CollaboraEndpoint:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Comments:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ConnectToMerit:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ContactForm:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  CopAssets:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  CopGroups:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  CopLocation:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  CoursesState:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  CycleDashboard:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  DiscussionBoards:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  DiscussionTopics:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Documentation:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  DualLanguageHandbook:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  DualLanguageSubmission:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Ea_eval_survey:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Endpoint:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  FamilySurveyLink:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Grade:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Inquisitor:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  InstructorMaterials:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Item:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Layout:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Limit:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Links:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Lister:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Location:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Login:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Logout:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  LtiEndpoint:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ManageComponents:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ManageDatalists:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ManageGroups:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ManageMenus:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ManageRecipes:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ManageSite:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ManageStudents:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ManageUsers:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Media:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  MediaDatabase:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  MeritEndpoint:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  MssqlServer:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Note:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ProgramProfileSubmission:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  RatingsRubric:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  RecordsReviewHandbook:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  RecordsReviewSubmission:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ReflectionAssignment:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Reports:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ReportsBuilder:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ResetPassword:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  ResourceLibrary:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  SharedAssets:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  SharedGoals:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Solotron:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  StudentSubmissions:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  StudentSubmissionsSlug:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  SupportingDocumentation:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Tagit:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  Tracker:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UnassignedAssets:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UploadAndReflectionAssignment:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UserInvitations:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UserSettings:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UserSubmissions:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UsersLogAllAttributes:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UsersLogCompletedGoals:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UsersLogCopGroups:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UsersLogCopGroupsDigest:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UsersLogCreatedAt:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UsersLogPartnerships:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UsersLogProperties:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UsersLogReporting:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UsersLogSharedGoals:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  UsersLogUploads:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  VideoConference:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  VideoHighlightSubmission:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)
+  VideoReflection:
+  - created_by: int
+  - created_at: unix timestamp
+  - title: varchar(255)
+  - type: varchar(50)

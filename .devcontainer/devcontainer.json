@@ -23,4 +23,3 @@
     "postCreateCommand": 
     "sh .devcontainer/postBuild.sh"
   }
-  
