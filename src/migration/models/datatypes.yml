@@ -1,0 +1,55 @@
+# Description: This file contains the mapping of PostgreSQL data types to Python data types.
+datatypes:
+  integer_types:
+    smallint: int
+    integer: int
+    bigint: int
+  numeric_types:
+    numeric: float
+    real: float
+    double_precision: float
+  monetary_types:
+	  money: float
+  character_types:
+    character_varying: str
+    varchar: str
+    character: str
+    char: str
+    text: str
+  binary_data_types:
+	  bytea: bytes
+  datetime_types:
+    timestamp: datetime
+    timestamp_with_time_zone: datetime
+    date: date
+    time: time
+    time_with_time_zone: time
+    interval: timedelta
+  boolean_type:
+	  boolean: bool
+  enum_type:
+	  enum: str  # Enums need specific handling in Pydantic
+  array_type:
+	  array: list  # Specify further with Pydantic's conlist for type specifics
+  json_types:
+    json: dict
+    jsonb: dict
+  uuid_type:
+	  uuid: UUID
+  geometric_types:
+	  point: Tuple[float, float]  # Example for point, others need custom handling
+  network_address_types:
+    inet: str
+    cidr: str
+    macaddr: str
+    macaddr8: str
+  bit_string_types:
+    bit: str
+    varbit: str
+  text_search_types:
+    tsvector: str
+    tsquery: str
+  xml_type:
+	  xml: str  # Requires custom validation in Pydantic
+  object_identifier_types:
+	  oid: int
