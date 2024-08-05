@@ -1,55 +1,58 @@
 # Description: This file contains the mapping of PostgreSQL data types to Python data types.
+# Usage: This file is used to generate the Pydantic models for the database schema.
+# Reference: https://www.postgresql.org/docs/current/datatype.html
+
 datatypes:
   integer_types:
-    smallint: int
-    integer: int
-    bigint: int
+    smallint: int  # 2 bytes, small-range integer
+    integer: int  # 4 bytes, typical choice for integer
+    bigint: int  # 8 bytes, large-range integer
   numeric_types:
-    numeric: float
-    real: float
-    double_precision: float
+    numeric: float  # Arbitrary precision number
+    real: float  # 4 bytes, variable-precision, inexact
+    double_precision: float  # 8 bytes, variable-precision, inexact
   monetary_types:
-	  money: float
+    money: float  # Currency amount with fixed fractional precision
   character_types:
-    character_varying: str
-    varchar: str
-    character: str
-    char: str
-    text: str
+    character_varying: str  # Variable-length with limit
+    varchar: str  # Variable-length with limit (synonym for character_varying)
+    character: str  # Fixed-length, blank padded
+    char: str  # Fixed-length, blank padded (synonym for character)
+    text: str  # Variable unlimited length
   binary_data_types:
-	  bytea: bytes
+    bytea: bytes  # Binary data ("byte array")
   datetime_types:
-    timestamp: datetime
-    timestamp_with_time_zone: datetime
-    date: date
-    time: time
-    time_with_time_zone: time
-    interval: timedelta
+    timestamp: datetime  # Date and time (no time zone)
+    timestamp_with_time_zone: datetime  # Date and time, with time zone
+    date: date  # Calendar date (year, month, day)
+    time: time  # Time of day (no time zone)
+    time_with_time_zone: time  # Time of day, with time zone
+    interval: timedelta  # Time span
   boolean_type:
-	  boolean: bool
+    boolean: bool  # True or false
   enum_type:
-	  enum: str  # Enums need specific handling in Pydantic
+    enum: str  # Enums need specific handling in Pydantic; user-defined list of values
   array_type:
-	  array: list  # Specify further with Pydantic's conlist for type specifics
-  json_types:
-    json: dict
-    jsonb: dict
+    array: list  # A field that can hold more than one value of the specified data type
+    json_types:
+    json: dict  # Stores JSON data as plain text, can be queried and manipulated in SQL
+    jsonb: dict  # Stored in a decomposed binary format, making it slightly slower to input but faster to process; allows indexing
   uuid_type:
-	  uuid: UUID
+    uuid: UUID  # Universally Unique Identifier, stored as 16-byte binary
   geometric_types:
-	  point: Tuple[float, float]  # Example for point, others need custom handling
+    point: Tuple[float, float]  # Represents a geometric point (x, y). Other geometric types need custom handling
   network_address_types:
-    inet: str
-    cidr: str
-    macaddr: str
-    macaddr8: str
+    inet: str  # IP address that can optionally store the subnet mask
+    cidr: str  # IP network address with subnet mask, enforcing network address rules
+    macaddr: str  # MAC address stored as 6 bytes
+    macaddr8: str  # MAC address stored as 8 bytes, allowing for future addressing modes
   bit_string_types:
-    bit: str
-    varbit: str
+    bit: str  # Fixed-length bit string
+    varbit: str  # Variable-length bit string
   text_search_types:
-    tsvector: str
-    tsquery: str
+    tsvector: str  # Text search vector for full-text search
+    tsquery: str  # Text search query for full-text search
   xml_type:
-	  xml: str  # Requires custom validation in Pydantic
+    xml: str  # Stores XML data; can be queried and manipulated with XPath and XQuery
   object_identifier_types:
-	  oid: int
+    oid: int  # Object identifier used internally by PostgreSQL
