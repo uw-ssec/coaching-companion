@@ -139,11 +139,6 @@ class Comments(BaseTableModel, table=True):
     def validate_timestamp(cls, value: int) -> datetime:
         """Validator for the timestamp field to convert int to datetime."""
         return datetime.fromtimestamp(value)
-
-    @FieldValidator('timestamp', pre=True)
-    def validate_timestamp(cls, value: int) -> datetime:
-        """Validator for the timestamp field to convert int to datetime."""
-        return datetime.fromtimestamp(value)
     
 class ConnectToMerit(BaseTableModel, table=True):
     pass
