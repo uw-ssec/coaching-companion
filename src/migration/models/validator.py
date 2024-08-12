@@ -70,6 +70,9 @@ class TableAnnotations(SQLModel, table=True):
 class AssessmentsClassroom(BaseTableModel, table=True):
     pass
 
+class AssessmentsDashboard(BaseTableModel, table=True):
+    pass
+
 class AssessmentsEvaluation(BaseTableModel, table=True):
     recipe_key: int = Field(default=None)
     title_eng: str = Field(default=None, max_length=255)  # English title
