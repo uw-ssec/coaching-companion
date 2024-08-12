@@ -4,7 +4,7 @@ from datetime import datetime
 from pydantic import HttpUrl, field_validator
 from sqlalchemy import BigInteger
 
-# Reusable functions
+# Reusable function
 def convert_timestamp_to_datetime(cls, value):
     return datetime.fromtimestamp(value)
 

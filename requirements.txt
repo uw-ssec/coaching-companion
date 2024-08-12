@@ -1,0 +1,6 @@
+ibis-framework
+precommit
+pydantic
+pytest
+sqlalchemy
+sqlmodel
