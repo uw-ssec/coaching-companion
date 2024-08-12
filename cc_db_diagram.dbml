@@ -1,0 +1,874 @@
+Table AWSDashboard {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Access {
+    content_create varchar(10)
+    content_delete varchar(10)
+    content_edit varchar(10)
+    created_at unix timestamp
+    created_by int
+    recipe_key int
+    repudiated_url varchar(50)
+    role_access varchar(50)
+    title varchar(255)
+    type varchar(50)
+}
+
+Table AccreditationCertificate {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table AccreditationSubmission {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table ActionPlans {
+    completed_at int
+    created_at unix timestamp
+    created_by int
+    cycle_summary text
+    info text
+    next_step_notes text
+    status varchar(20)
+    step-info-NaN varchar(100)
+    title varchar(255)
+    type varchar(50)
+}
+
+Table AddPlayByPlay {
+    created_at unix timestamp
+    created_by int
+    item_id int
+    timestamp int
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Alias {
+    alias_id int
+    children_sequencer varchar(10)
+    created_at unix timestamp
+    created_by int
+    id varchar(50)
+    login_disabled boolean
+    media varchar(60)
+    media_type varchar(100)
+    on_cloudfront varchar(10)
+    published varchar(50)
+    ratings_id varchar(50)
+    recipe varchar(255)
+    recipe_key int
+    recipe_name varchar(50)
+    report_types varchar(50)
+    template varchar(100)
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Annotations {
+    created_at unix timestamp
+    created_by int
+    info text
+    recipe_key int
+    title varchar(255)
+    type varchar(50)
+}
+
+Table AssessmentsClassroom {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table AssessmentsDashbaord {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table AssessmentsEvaluation {
+    created_by int
+    recipe_key int
+    created_at unix timestamp
+    title_eng varchar(255)
+    title varchar(255)
+    type varchar(50)
+}
+
+Table AssessmentsLister {
+    created_by int
+    created_at unix timestamp
+    title_eng varchar(255)
+    title varchar(255)
+    type varchar(50)
+    lister_authority varchar(50)
+    template varchar(100)
+}
+
+Table AssessmentsRating {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table AssessmentsReport {
+    created_by int
+    created_at unix timestamp
+    title_eng varchar(255)
+    title varchar(255)
+    type varchar(50)
+    title_esp varchar(255)
+}
+
+Table AssessmentsReportClassroom {
+    created_by int
+    created_at unix timestamp
+    title_eng varchar(255)
+    title varchar(255)
+    type varchar(50)
+}
+
+Table AssessmentsSite {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    template varchar(100)
+}
+
+Table Assets {
+    annotations_key varchar(15)
+    assets_editors varchar(100)
+    assets_members varchar(100)
+    cqelcoach_observation int
+    created_at unix timestamp
+    created_by int
+    media_type varchar(100)
+    notes text
+    observation_date varchar(25)
+    pbc_asset varchar(50)
+    resource_tag varchar(255)
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Assignments {
+    created_at unix timestamp
+    created_by int
+    title varchar(255)
+    type varchar(50)
+}
+
+Table CoachingPartnership {
+    coach varchar(100)
+    coachee varchar(100)
+    coachee_user varchar(15)
+    coach_user varchar(15)
+    created_at unix timestamp
+    created_by int
+    parent_url varchar(50)
+    participant varchar(50)
+    participant_user varchar(50)
+    partnership_filters varchar(100)
+    partnership_status varchar(25)
+    pbc_members varchar(100)
+    pbc_roles varchar(100)
+    prototype_description varchar(200)
+    prototype_status varchar(10)
+    template varchar(100)
+    title varchar(255)
+    type varchar(50)
+}
+
+Table CollaboraEndpoint {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Comments {
+    created_at unix timestamp
+    created_by int
+    recipe_key int
+    submit varchar(50)
+    Submit varchar(50)
+    text text
+    timestamp int
+    title varchar(255)
+    type varchar(50)
+}
+
+Table ConnectToMerit {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table ContactForm {
+    created_by int
+    recipe varchar(255)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    template varchar(100)
+}
+
+Table CopAssets {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table CopGroups {
+    cop_admins varchar(100)
+    cop_group_admin varchar(15)
+    user_id int
+    created_by int
+    cop_asset_creation varchar(15)
+    hide_video_conferencing varchar(10)
+    hide_cop_resources varchar(10)
+    user_type varchar(50)
+    parent_url varchar(50)
+    cqelcoach_group int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    cop_topic_creation varchar(15)
+    cop_members varchar(100)
+    disable_opt_out varchar(10)
+    hide_cop_members varchar(10)
+}
+
+Table CopLocation {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    template varchar(100)
+}
+
+Table CoursesState {
+    sub_roles varchar(50)
+    created_by int
+    course_name varchar(150)
+    course_identifier varchar(50)
+    course_number varchar(50)
+    created_at unix timestamp
+    lms_prototype varchar(50)
+    user_access varchar(255)
+    prototype_copy int
+    lms_course_url varchar(100)
+    title varchar(255)
+    type varchar(50)
+}
+
+Table CycleDashboard {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    template varchar(100)
+}
+
+Table DiscussionBoards {
+    created_by int
+    role_designation varchar(50)
+    created_at unix timestamp
+    description text
+    title varchar(255)
+    type varchar(50)
+}
+
+Table DiscussionTopics {
+    created_at unix timestamp
+    created_by int
+    id varchar(50)
+    prevent_inline_media varchar(10)
+    title varchar(255)
+    type varchar(50)
+    update_created_at varchar(50)
+}
+
+Table Documentation {
+    created_at unix timestamp
+    created_by int
+    title varchar(255)
+    type varchar(50)
+}
+
+Table DualLanguageHandbook {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table DualLanguageSubmission {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Ea_eval_survey {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Endpoint {
+    created_by int
+    recipe varchar(255)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table FamilySurveyLink {
+    created_by int
+    recipe varchar(255)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    template varchar(100)
+}
+
+Table Grade {
+    created_at unix timestamp
+    created_by int
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Inquisitor {
+    created_at unix timestamp
+    created_by int
+    title varchar(255)
+    type varchar(50)
+}
+
+Table InstructorMaterials {
+    components_limit int
+    created_at unix timestamp
+    created_by int
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Item {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    filter_by varchar(100)
+}
+
+Table Layout {
+    created_by int
+    class varchar(10)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Limit {
+    components_limit int
+    created_at unix timestamp
+    created_by int
+    recipe_key int
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Links {
+    target varchar(20)
+    created_by int
+    link_url varchar(150)
+    color varchar(10)
+    created_at unix timestamp
+    role_access varchar(50)
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Lister {
+    created_by int
+    lister_authority_display varchar(20)
+    repudiated_url varchar(50)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    lister_authority varchar(50)
+    template varchar(100)
+    members varchar(100)
+}
+
+Table Location {
+    order_direction varchar(15)
+    created_by int
+    recipe varchar(255)
+    children_sequencer varchar(10)
+    order_by varchar(50)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    template varchar(100)
+}
+
+Table Login {
+    created_by int
+    recipe varchar(255)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    login_disabled boolean
+    template varchar(100)
+}
+
+Table Logout {
+    created_by int
+    recipe varchar(255)
+    recipe_name varchar(50)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table LtiEndpoint {
+    created_by int
+    recipe varchar(255)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table ManageComponents {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table ManageDatalists {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table ManageGroups {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    template varchar(100)
+}
+
+Table ManageMenus {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table ManageRecipes {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table ManageSite {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table ManageStudents {
+    created_at unix timestamp
+    created_by int
+    role_select varchar(50)
+    title varchar(255)
+    type varchar(50)
+}
+
+Table ManageUsers {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Media {
+    code varchar(100)
+    cqelcoach_resource int
+    created_at unix timestamp
+    created_by int
+    description text
+    disable_captions boolean
+    filename varchar(100)
+    id varchar(50)
+    inputtypes varchar(50)
+    job_id varchar(50)
+    link varchar(150)
+    media_type varchar(100)
+    name varchar(100)
+    on_cloudfront varchar(10)
+    path varchar(50)
+    published varchar(50)
+    ratings_id varchar(50)
+    recipe_key int
+    taxonomy varchar(255)
+    text text
+    title varchar(255)
+    type varchar(50)
+    vide_hightlight_location varchar(100)
+    video_hightlight_alias_id int
+    video_hightlight_created_by int
+    video_hightlight_location varchar(100)
+    video_hightlight_submission int
+    video_hightlight_submission_at int
+    video_hightlight_submission_copy int
+    vtt varchar(255)
+}
+
+Table MediaDatabase {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table MeritEndpoint {
+    created_by int
+    recipe varchar(255)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table MssqlServer {
+    created_by int
+    username varchar(50)
+    password varchar(25)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    host varchar(100)
+    name varchar(100)
+}
+
+Table Note {
+    created_at unix timestamp
+    created_by int
+    notes text
+    title varchar(255)
+    type varchar(50)
+}
+
+Table ProgramProfileSubmission {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table RatingsRubric {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table RecordsReviewHandbook {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table RecordsReviewSubmission {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table ReflectionAssignment {
+    assignment_category varchar(15)
+    components_limit int
+    created_at unix timestamp
+    created_by int
+    instructions text
+    recipe_key int
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Reports {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    report_types varchar(50)
+}
+
+Table ReportsBuilder {
+    created_by int
+    recipe varchar(255)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    report_types varchar(50)
+}
+
+Table ResetPassword {
+    created_by int
+    recipe varchar(255)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    template varchar(100)
+}
+
+Table ResourceLibrary {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table SharedAssets {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    template varchar(100)
+}
+
+Table SharedGoals {
+    completed_at int
+    core_knowledge_categories varchar(100)
+    created_at unix timestamp
+    created_by int
+    cycle_summary text
+    info text
+    prototype_id int
+    status varchar(20)
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Solotron {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    can_survey_components varchar(150)
+}
+
+Table StudentSubmissions {
+    created_at unix timestamp
+    created_by int
+    title varchar(255)
+    type varchar(50)
+}
+
+Table StudentSubmissionsSlug {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table SupportingDocumentation {
+    created_at unix timestamp
+    created_by int
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Tagit {
+    created_by int
+    timestamp int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table Tracker {
+    created_by int
+    created_at unix timestamp
+    description text
+    title varchar(255)
+    type varchar(50)
+    template varchar(100)
+}
+
+Table UnassignedAssets {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    template varchar(100)
+}
+
+Table UploadAndReflectionAssignment {
+    assignment_category varchar(15)
+    components_limit int
+    created_at unix timestamp
+    created_by int
+    grading_rubric text
+    instructions text
+    recipe_key int
+    title varchar(255)
+    type varchar(50)
+}
+
+Table UserInvitations {
+    created_by int
+    recipe varchar(255)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+    template varchar(100)
+}
+
+Table UserSettings {
+    created_by int
+    recipe varchar(255)
+    recipe_name varchar(50)
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table UserSubmissions {
+    created_by int
+    recipe varchar(255)
+    can_view varchar(150)
+    repudiated_url varchar(50)
+    created_at unix timestamp
+    can_submit varchar(150)
+    title varchar(255)
+    type varchar(50)
+    content_administrator varchar(10)
+}
+
+Table UsersLogAllAttributes {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table UsersLogCompletedGoals {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table UsersLogCopGroups {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table UsersLogCopGroupsDigest {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table UsersLogCreatedAt {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table UsersLogPartnerships {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table UsersLogProperties {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table UsersLogReporting {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table UsersLogSharedGoals {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table UsersLogUploads {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table VideoConference {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table VideoHighlightSubmission {
+    created_by int
+    created_at unix timestamp
+    title varchar(255)
+    type varchar(50)
+}
+
+Table VideoReflection {
+    created_at unix timestamp
+    created_by int
+    idClassroom int
+    idRating int
+    idVHResponse int
+    parent_url varchar(50)
+    procedure varchar(20)
+    ratings_id varchar(50)
+    reflection_input text
+    title varchar(255)
+    type varchar(50)
+    updated_on int
+}
+
