@@ -4,6 +4,10 @@ from datetime import datetime
 from pydantic import HttpUrl, field_validator
 from sqlalchemy import BigInteger
 
+# Reusable functions
+def convert_timestamp_to_datetime(cls, value):
+    return datetime.fromtimestamp(value)
+
 # The BaseTableModel class is a base class for all the tables in the database.
 class BaseTableModel(SQLModel, table=False):
     created_at: datetime = Field(default=None, sa_column_kwargs={"nullable": False})
@@ -11,11 +15,8 @@ class BaseTableModel(SQLModel, table=False):
     title: str = Field(default=None, max_length=255)
     type: Optional[str] = Field(default=None, max_length=50)  # Optional varchar(50) field
 
-    @field_validator('created_at', pre=True)
     # Validator for the created_at field to convert Unix timestamp to datetime.
-    @classmethod
-    def convert_timestamp_to_datetime(cls, value):
-        return datetime.fromtimestamp(value)
+    @field_validator('created_at', pre=True)(convert_timestamp_to_datetime)
     
 """
 The following classes define the tables in the database. 
@@ -51,18 +52,13 @@ class ActionPlans(BaseTableModel, table=True): # TODO: Update completed_at based
     status: str = Field(default=None, max_length=20)
     step_info_NaN: str = Field(default=None, max_length=100)  # Consider renaming to follow Python naming conventions
 
-    @field_validator('completed_at', pre=True)
-    def convert_timestamp_to_datetime(cls, value):
-        return datetime.fromtimestamp(value)
+    @field_validator('completed_at', pre=True)(convert_timestamp_to_datetime)
 
 class AddPlayByPlay(BaseTableModel, table=True): # TODO: Does this table have a primary key?
     item_id: int = Field(default=None)
     timestamp: datetime = Field(default=None, sa_column_kwargs={"nullable": False})  # Now a datetime
 
-    @field_validator('timestamp', pre=True)
-    def validate_timestamp(cls, value: int) -> datetime:
-        """Validator for the timestamp field to convert int to datetime."""
-        return datetime.fromtimestamp(value)
+    @field_validator('timestamp', pre=True)(convert_timestamp_to_datetime)
 
 class Alias(BaseTableModel, table=True): # TODO: Review @Dayton responses before making changes**
     pass
@@ -136,10 +132,7 @@ class Comments(BaseTableModel, table=True):
     text: str = Field(default=None, sa_column_kwargs={"type_": "Text"})
     timestamp: datetime = Field(default=None)  # Renamed from 'timestamp' and changed type
 
-    @field_validator('timestamp', pre=True)
-    def validate_timestamp(cls, value: int) -> datetime:
-        """Validator for the timestamp field to convert int to datetime."""
-        return datetime.fromtimestamp(value)
+    @field_validator('timestamp', pre=True)(convert_timestamp_to_datetime)
     
 class ConnectToMerit(BaseTableModel, table=True):
     pass
@@ -190,10 +183,7 @@ class DiscussionTopics(BaseTableModel, table=True):
     prevent_inline_media: bool = Field(default=None)
     update_created_at: datetime = Field(default=None)
 
-    @field_validator('update_created_at', pre=True)
-    def validate_timestamp(cls, value: int) -> datetime:
-        """Validator for the update_created_at field to convert int to datetime."""
-        return datetime.fromtimestamp(value)
+    @field_validator('update_created_at', pre=True)(convert_timestamp_to_datetime)
 
 class Documentation(BaseTableModel, table=True):
     pass
@@ -375,9 +365,7 @@ class SharedGoals(BaseTableModel, table=True):
     prototype_id: int = Field(default=None)
     status: str = Field(default=None, max_length=20)
 
-    @field_validator('completed_at', pre=True)
-    def convert_timestamp_to_datetime(cls, value):
-        return datetime.fromtimestamp(value)
+    @field_validator('completed_at', pre=True)(convert_timestamp_to_datetime)
 
 class Solotron(BaseTableModel, table=True):
     can_survey_components: str = Field(default=None, max_length=150)
@@ -394,10 +382,7 @@ class SupportingDocumentation(BaseTableModel, table=True):
 class Tagit(BaseTableModel, table=True):
     timestamp: datetime = Field(default=None)
 
-    @field_validator('timestamp', pre=True)
-    def validate_timestamp(cls, value: int) -> datetime:
-        """Validator for the timestamp field to convert int to datetime."""
-        return datetime.fromtimestamp(value)
+    @field_validator('timestamp', pre=True)(convert_timestamp_to_datetime)
 
 class Tracker(BaseTableModel, table=True):
     description: str = Field(default=None)
