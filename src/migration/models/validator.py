@@ -12,7 +12,8 @@ class BaseTableModel(SQLModel, table=False):
     type: Optional[str] = Field(default=None, max_length=50)  # Optional varchar(50) field
 
     @FieldValidator('created_at', pre=True)
-    """ Validator for the created_at field to convert Unix timestamp to datetime. """
+    # Validator for the created_at field to convert Unix timestamp to datetime.
+    @classmethod
     def convert_timestamp_to_datetime(cls, value):
         return datetime.fromtimestamp(value)
     
