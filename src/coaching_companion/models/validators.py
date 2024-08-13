@@ -4,8 +4,9 @@ from datetime import datetime
 from pydantic import HttpUrl, field_validator
 from sqlalchemy import BigInteger
 
-# Reusable function
-def convert_timestamp_to_datetime(cls, value):
+# Reusable function to convert Unix timestamp to datetime
+@classmethod
+def convert_timestamp_to_datetime(cls,value):
     return datetime.fromtimestamp(value)
 
 # The BaseTableModel class is a base class for all the tables in the database.
@@ -16,9 +17,9 @@ class BaseTableModel(SQLModel, table=False):
     type: Optional[str] = Field(default=None, max_length=50)  # Optional varchar(50) field
 
     # Validator for the created_at field to convert Unix timestamp to datetime.
-    @field_validator('created_at', pre=True)(convert_timestamp_to_datetime)
-    
-"""
+    _created_at = field_validator('created_at')(convert_timestamp_to_datetime)
+
+"""  
 The following classes define the tables in the database. 
 Each class inherits from the BaseTableModel class and specifies the fields for the table. 
 The table=True argument is used to indicate that the class represents a table in the database. 
@@ -52,13 +53,13 @@ class ActionPlans(BaseTableModel, table=True): # TODO: Update completed_at based
     status: str = Field(default=None, max_length=20)
     step_info_NaN: str = Field(default=None, max_length=100)  # Consider renaming to follow Python naming conventions
 
-    @field_validator('completed_at', pre=True)(convert_timestamp_to_datetime)
+    _completed_at = field_validator('completed_at')(convert_timestamp_to_datetime)
 
 class AddPlayByPlay(BaseTableModel, table=True): # TODO: Does this table have a primary key?
     item_id: int = Field(default=None)
     timestamp: datetime = Field(default=None, sa_column_kwargs={"nullable": False})  # Now a datetime
 
-    @field_validator('timestamp', pre=True)(convert_timestamp_to_datetime)
+    _timestamp = field_validator('timestamp')(convert_timestamp_to_datetime)
 
 class Alias(BaseTableModel, table=True):
     alias_id: int = Field(primary_key=True)
@@ -152,7 +153,7 @@ class Comments(BaseTableModel, table=True):
     text: str = Field(default=None, sa_column_kwargs={"type_": "Text"})
     timestamp: datetime = Field(default=None)  # Renamed from 'timestamp' and changed type
 
-    @field_validator('timestamp', pre=True)(convert_timestamp_to_datetime)
+    _timestamp = field_validator('timestamp')(convert_timestamp_to_datetime)
     
 class ConnectToMerit(BaseTableModel, table=True):
     pass
@@ -203,7 +204,7 @@ class DiscussionTopics(BaseTableModel, table=True):
     prevent_inline_media: bool = Field(default=None)
     update_created_at: datetime = Field(default=None)
 
-    @field_validator('update_created_at', pre=True)(convert_timestamp_to_datetime)
+    _update_created_at = field_validator('update_created_at')(convert_timestamp_to_datetime)
 
 class Documentation(BaseTableModel, table=True):
     pass
@@ -385,7 +386,7 @@ class SharedGoals(BaseTableModel, table=True):
     prototype_id: int = Field(default=None)
     status: str = Field(default=None, max_length=20)
 
-    @field_validator('completed_at', pre=True)(convert_timestamp_to_datetime)
+    _completed_at = field_validator('completed_at')(convert_timestamp_to_datetime)
 
 class Solotron(BaseTableModel, table=True):
     can_survey_components: str = Field(default=None, max_length=150)
@@ -402,7 +403,7 @@ class SupportingDocumentation(BaseTableModel, table=True):
 class Tagit(BaseTableModel, table=True):
     timestamp: datetime = Field(default=None)
 
-    @field_validator('timestamp', pre=True)(convert_timestamp_to_datetime)
+    _timestamp = field_validator('timestamp')(convert_timestamp_to_datetime)
 
 class Tracker(BaseTableModel, table=True):
     description: str = Field(default=None)

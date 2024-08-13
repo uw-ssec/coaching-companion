@@ -1,0 +1,53 @@
+# This file is used to build the docker image for the web server and the database
+version: '3.9'
+# The file defines two services: db and web
+services:
+    db:
+        # The db service uses the mysql:8.0.29 image, which is a Docker image that contains MySQL version 8.0.29.
+        image: postgres:latest
+
+        # The restart: always directive ensures that the container restarts automatically if it stops.
+        # If it's stopped manually, it is restarted only when Docker daemon restarts or the container itself is manually restarted.
+        restart: always
+
+        # The ports directive maps the MySQL port 3306 inside the Docker container to port 3306 on the host machine.
+        # This allows us to connect to the MySQL server running inside the Docker container from the host machine.
+        ports:
+            - 5432:5432
+
+        # The environment directive sets environment variables inside the Docker container.
+        environment:
+            POSTGRES_USER: postgres #
+            POSTGRES_PASSWORD: Vce3tw*nty # Update for your project
+            POSTGRES_DB: cc_django_monolithic # Database name
+
+        # The volumes directive mounts files or directories from the host machine to the Docker container.
+        # Here, it's mounting a SQL dump file from the host machine to the /docker-entrypoint-initdb.d/ directory inside the Docker container.
+        # Any .sql files in this directory are automatically executed when the container starts up.
+        volumes:
+            - ./dump-cc_django_monolithic-202408121344.sql:/docker-entrypoint-initdb.d/00-cc_django_monolithic.sql
+        # The networks directive specifies that the db service is connected to the postgres network.
+        networks:
+            - postgres
+
+    # web:
+    #     # The web service builds a Docker image using the Dockerfile in the current directory (as specified by the build: . directive).
+    #     build: .
+
+    #     # Like the db service, it also restarts automatically if it stops.
+    #     restart: always
+
+    #     # The ports directive for the web service maps port 80 inside the Docker container to port 80 on the host machine.
+    #     # This allows you to access the web server running inside the Docker container from your host machine.
+    #     ports:
+    #         - 80:80
+
+    #     # The volumes directive for the web service mounts the current directory on the host machine to the /var/www/html/ directory inside the Docker container.
+    #     # This allows the web server to serve our PHP application.
+    #     volumes:
+    #         - ./:/var/www/html/
+
+    #     # The depends_on directive specifies that the web service depends on the db service.
+    #     # This means that the db service will start before the web service.
+    #     depends_on:
+    #         - db
