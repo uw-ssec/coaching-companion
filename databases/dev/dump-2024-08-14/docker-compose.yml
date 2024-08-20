@@ -4,7 +4,7 @@ version: '3.9'
 services:
     db:
         # The db service uses the mysql:8.0.29 image, which is a Docker image that contains MySQL version 8.0.29.
-        image: postgres:latest
+        image: postgis/postgis:14-3.3
 
         # The restart: always directive ensures that the container restarts automatically if it stops.
         # If it's stopped manually, it is restarted only when Docker daemon restarts or the container itself is manually restarted.
@@ -15,20 +15,23 @@ services:
         ports:
             - 5432:5432
 
+        # The volumes directive mounts files or directories from the host machine to the Docker container.
+        # Here, it's mounting a SQL dump file from the host machine to the /docker-entrypoint-initdb.d/ directory inside the Docker container.
+        # Any .sql files in this directory are automatically executed when the container starts up.
+        # Reference: https://stackoverflow.com/questions/36781984/load-postgres-dump-after-docker-compose-up
+        volumes:
+            - ./dump-cc_django_monolithic-202408141009.sql:/dump-cc_django_monolithic-202408141009.sql
+            - ./restore.sh:/docker-entrypoint-initdb.d/00-cc_django_monolithic.sql
+
         # The environment directive sets environment variables inside the Docker container.
         environment:
             POSTGRES_USER: postgres #
             POSTGRES_PASSWORD: Vce3tw*nty # Update for your project
             POSTGRES_DB: cc_django_monolithic # Database name
-
-        # The volumes directive mounts files or directories from the host machine to the Docker container.
-        # Here, it's mounting a SQL dump file from the host machine to the /docker-entrypoint-initdb.d/ directory inside the Docker container.
-        # Any .sql files in this directory are automatically executed when the container starts up.
-        volumes:
-            - ./dump-cc_django_monolithic-202408121344.sql:/docker-entrypoint-initdb.d/00-cc_django_monolithic.sql
-        # The networks directive specifies that the db service is connected to the postgres network.
-        networks:
-            - postgres
+        
+        # # The networks directive specifies that the db service is connected to the postgres network.
+        # networks:
+        #     - postgres
 
     # web:
     #     # The web service builds a Docker image using the Dockerfile in the current directory (as specified by the build: . directive).

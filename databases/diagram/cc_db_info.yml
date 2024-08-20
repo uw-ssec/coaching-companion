@@ -5,9 +5,9 @@ vce_components_meta:
   - title: varchar(255)
   - type: varchar(50)
   Access:
-  - content_create: varchar(10)
-  - content_delete: varchar(10)
-  - content_edit: varchar(10)
+  - content_create: varchar(10) # Should this become a boolean?
+  - content_delete: varchar(10) # Should this become a boolean?
+  - content_edit: varchar(10) # Should this become a boolean?
   - created_at: unix timestamp
   - created_by: int
   - recipe_key: int
@@ -74,7 +74,7 @@ vce_components_meta:
   - created_at: unix timestamp
   - title: varchar(255)
   - type: varchar(50)
-  AssessmentsDashbaord:
+  AssessmentsDashboard: # Fixed the spelling of "AssessmentsDashboard"
   - created_by: int
   - created_at: unix timestamp
   - title: varchar(255)

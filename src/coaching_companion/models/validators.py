@@ -1,13 +1,19 @@
 from typing import Optional
 from sqlmodel import SQLModel, Field
-from datetime import datetime
+from datetime import datetime, timezone
 from pydantic import HttpUrl, field_validator
 from sqlalchemy import BigInteger
 
 # Reusable function to convert Unix timestamp to datetime
 @classmethod
 def convert_timestamp_to_datetime(cls,value):
-    return datetime.fromtimestamp(value)
+    # Convert the Unix timestamp to a UTC datetime object
+    utc_datetime = datetime.fromtimestamp(value, tz=timezone.utc)
+    # Format the datetime object to the desired string format
+    formatted_datetime = utc_datetime.strftime("%Y-%m-%dT%H:%M:%SZ")
+    return formatted_datetime
+
+# Source: https://www.udacity.com/blog/2021/05/managing-dates-with-javascript-date-formats.html
 
 # The BaseTableModel class is a base class for all the tables in the database.
 class BaseTableModel(SQLModel, table=False):
@@ -19,7 +25,7 @@ class BaseTableModel(SQLModel, table=False):
     # Validator for the created_at field to convert Unix timestamp to datetime.
     _created_at = field_validator('created_at')(convert_timestamp_to_datetime)
 
-"""  
+"""
 The following classes define the tables in the database. 
 Each class inherits from the BaseTableModel class and specifies the fields for the table. 
 The table=True argument is used to indicate that the class represents a table in the database. 

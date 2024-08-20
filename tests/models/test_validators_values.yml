@@ -1,0 +1,1855 @@
+vce_components_meta:
+  AWSDashboard:
+    created_by: 
+      input: !!int 12345678901234567890
+      output: !!int 12345678901234567890
+    created_at: 
+      input: 1633036800
+      output: 2021-10-01T00:00:00Z
+    title:
+      input: "AWS Dashboard Title"
+      output: "AWS Dashboard Title"
+    type:
+      input: "AWSDashboard"
+      output: "AWSDashboard"
+  Access:
+    content_create:
+      input: "yes"
+      output: "yes"
+    content_delete:
+      input: "no"
+      output: "no"
+    content_edit:
+      input: "yes"
+      output: "yes"
+    created_at:
+      input: 1633036801
+      output: 2021-10-01T00:00:01Z
+    created_by:
+      input: !!int 45678901234567890123
+      output: !!int 45678901234567890123
+    recipe_key:
+      input: 789
+      output: 789
+    repudiated_url:
+      input: "http://example.com"
+      output: "http://example.com"
+    role_access:
+      input: "admin"
+      output: "admin"
+    title:
+      input: "Access Title"
+      output: "Access Title"
+    type:
+      input: "Access"
+      output: "Access"
+  AccreditationCertificate:
+    created_by:
+      input: !!int 78901234567890123456
+      output: !!int 78901234567890123456
+    created_at:
+      input: 1633036802
+      output: 2021-10-01T00:00:02Z
+    title:
+      input: "Accreditation Certificate Title"
+      output: "Accreditation Certificate Title"
+    type:
+      input: "AccreditationCertificate"
+      output: "AccreditationCertificate"
+  AccreditationSubmission:
+    created_by:
+      input: !!int 10123456789012345678
+      output: !!int 10123456789012345678
+    created_at:
+      input: 1633036803
+      output: 2021-10-01T00:00:03Z
+    title:
+      input: "Accreditation Submission Title"
+      output: "Accreditation Submission Title"
+    type:
+      input: "AccreditationSubmission"
+      output: "AccreditationSubmission"
+  ActionPlans:
+    completed_at:
+      input: 1633036804
+      output: 2021-10-01T00:00:04Z
+    created_at:
+      input: 1633036805
+      output: 2021-10-01T00:00:05Z
+    created_by:
+      input: !!int 20234567890123456789
+      output: !!int 20234567890123456789
+    cycle_summary:
+      input: "Cycle summary text"
+      output: "Cycle summary text"
+    info:
+      input: "Info text"
+      output: "Info text"
+    next_step_notes:
+      input: "Next step notes text"
+      output: "Next step notes text"
+    status:
+      input: "completed"
+      output: "completed"
+    step-info-NaN:
+      input: "Step info text"
+      output: "Step info text"
+    title:
+      input: "Action Plans Title"
+      output: "Action Plans Title"
+    type:
+      input: "ActionPlans"
+      output: "ActionPlans"
+  AddPlayByPlay:
+    created_at:
+      input: 1633036806
+      output: 2021-10-01T00:00:06Z
+    created_by:
+      input: !!int 78901234567890123456
+      output: !!int 78901234567890123456
+    item_id:
+      input: 404
+      output: 404
+    timestamp:
+      input: 1633036807
+      output: 2021-10-01T00:00:07Z
+    title:
+      input: "Add Play By Play Title"
+      output: "Add Play By Play Title"
+    type:
+      input: "play_by_play"
+      output: "play_by_play"
+  Alias:
+    alias_id:
+      input: !!int 78901234567890123505
+      output: !!int 78901234567890123505
+    children_sequencer:
+      input: "seq1"
+      output: "seq1"
+    created_at:
+      input: 1633036808
+      output: 2021-10-01T00:00:08Z
+    created_by:
+      input: !!int 78901234567890123456
+      output: !!int 78901234567890123456
+    id:
+      input: "alias_1"
+      output: "alias_1"
+    login_disabled:
+      input: true
+      output: true
+    media:
+      input: "media1"
+      output: "media1"
+    media_type:
+      input: "image"
+      output: "image"
+    on_cloudfront:
+      input: "yes"
+      output: "yes"
+    published:
+      input: "published"
+      output: "published"
+    ratings_id:
+      input: "rating_1"
+      output: "rating_1"
+    recipe:
+      input: "recipe1"
+      output: "recipe1"
+    recipe_key:
+      input: 707
+      output: 707
+    recipe_name:
+      input: "Recipe Name"
+      output: "Recipe Name"
+    report_types:
+      input: "type1"
+      output: "type1"
+    template:
+      input: "template1"
+      output: "template1"
+    title:
+      input: "Alias Title"
+      output: "Alias Title"
+    type:
+      input: "alias"
+      output: "alias"
+  Annotations:
+    created_at:
+      input: 1633036809
+      output: 2021-10-01T00:00:09Z
+    created_by:
+      input: !!int 78901234567890123456
+      output: !!int 78901234567890123456
+    info:
+      input: "Annotation info text"
+      output: "Annotation info text"
+    recipe_key:
+      input: !!int 78901234567890123909
+      output: !!int 78901234567890123909
+    title:
+      input: "Annotations Title"
+      output: "Annotations Title"
+    type:
+      input: "annotation"
+      output: "annotation"
+  AssessmentsClassroom:
+    created_by:
+      input: !!int 78901234567890123456
+      output: !!int 78901234567890123456
+    created_at:
+      input: 1633036810
+      output: 2021-10-01T00:00:10Z
+    title:
+      input: "Classroom Assessment Title"
+      output: "Classroom Assessment Title"
+    type:
+      input: "classroom"
+      output: "classroom"
+  AssessmentsDashboard:
+    created_by:
+      input: !!int 78901234567890123456
+      output: !!int 78901234567890123456
+    created_at:
+      input: 1633036811
+      output: 2021-10-01T00:00:11Z
+    title:
+      input: "Dashboard Assessment Title"
+      output: "Dashboard Assessment Title"
+    type:
+      input: "dashboard"
+      output: "dashboard"
+  AssessmentsEvaluation:
+    created_by:
+      input: !!int 78901234567890123456
+      output: !!int 78901234567890123456
+    recipe_key:
+      input: !!int 78901234567890123201
+      output: !!int 78901234567890123201
+    created_at:
+      input: 1633036812
+      output: 2021-10-01T00:00:12Z
+    title_eng:
+      input: "Evaluation Title English"
+      output: "Evaluation Title English"
+    title:
+      input: "Evaluation Title"
+      output: "Evaluation Title"
+    type:
+      input: "evaluation"
+      output: "evaluation"
+  AssessmentsLister:
+    created_by:
+      input: !!int 78901234567890123456
+      output: !!int 78901234567890123456
+    created_at:
+      input: 1633036813
+      output: 2021-10-01T00:00:13Z
+    title_eng:
+      input: "Lister Title English"
+      output: "Lister Title English"
+    title:
+      input: "Lister Title"
+      output: "Lister Title"
+    type:
+      input: "lister"
+      output: "lister"
+    lister_authority:
+      input: "authority1"
+      output: "authority1"
+    template:
+      input: "template1"
+      output: "template1"
+  AssessmentsRating:
+    created_by:
+      input: !!int 78901234567890123456
+      output: !!int 78901234567890123456
+    created_at:
+      input: 1633036814
+      output: 2021-10-01T00:00:14Z
+    title:
+      input: "Rating Title"
+      output: "Rating Title"
+    type:
+      input: "rating"
+      output: "rating"
+  AssessmentsReport:
+    created_by:
+      input: !!int 78901234567890123456
+      output: !!int 78901234567890123456
+    created_at:
+      input: 1633036815
+      output: 2021-10-01T00:00:15Z
+    title_eng:
+      input: "Report Title English"
+      output: "Report Title English"
+    title:
+      input: "Report Title"
+      output: "Report Title"
+    type:
+      input: "report"
+      output: "report"
+    title_esp:
+      input: "Título del Informe"
+      output: "Título del Informe"
+  AssessmentsReportClassroom:
+    created_by:
+      input: !!int 78901234567890123456
+      output: !!int 78901234567890123456
+    created_at:
+      input: 1633036816
+      output: 2021-10-01T00:00:16Z
+    title_eng:
+      input: "Classroom Report Title English"
+      output: "Classroom Report Title English"
+    title:
+      input: "Classroom Report Title"
+      output: "Classroom Report Title"
+    type:
+      input: "classroom_report"
+      output: "classroom_report"
+  AssessmentsSite:
+    created_by:
+      input: !!int 78901234567890123456
+      output: !!int 78901234567890123456
+    created_at:
+      input: 1633036817
+      output: 2021-10-01T00:00:17Z
+    title:
+      input: "Site Assessment Title"
+      output: "Site Assessment Title"
+    type:
+      input: "site"
+      output: "site"
+    template:
+      input: "template2"
+      output: "template2"
+  Assets:
+    annotations_key:
+      input: "key123"
+      output: "key123"
+    assets_editors:
+      input: "editor1, editor2"
+      output: "editor1, editor2"
+    assets_members:
+      input: "member1, member2"
+      output: "member1, member2"
+    cqelcoach_observation:
+      input: 301
+      output: 301
+    created_at:
+      input: 1633036818
+      output: 2021-10-01T00:00:18Z
+    created_by:
+      input: 109
+      output: 109
+    media_type:
+      input: "video"
+      output: "video"
+    notes:
+      input: "Some notes about the asset."
+      output: "Some notes about the asset."
+    observation_date:
+      input: "2021-09-30"
+      output: "2021-09-30"
+    pbc_asset:
+      input: "asset1"
+      output: "asset1"
+    resource_tag:
+      input: "tag1, tag2"
+      output: "tag1, tag2"
+    title:
+      input: "Assets Title"
+      output: "Assets Title"
+    type:
+      input: "asset"
+      output: "asset"
+  Assignments:
+    created_at:
+      input: 1633036819
+      output: 2021-10-01T00:00:19Z
+    created_by:
+      input: 110
+      output: 110
+    title:
+      input: "Assignment Title"
+      output: "Assignment Title"
+    type:
+      input: "assignment"
+      output: "assignment"
+  CoachingPartnership:
+    coach:
+      input: "Coach Name"
+      output: "Coach Name"
+    coachee:
+      input: "Coachee Name"
+      output: "Coachee Name"
+    coachee_user:
+      input: "user123"
+      output: "user123"
+    coach_user:
+      input: "user456"
+      output: "user456"
+    created_at:
+      input: 1633036820
+      output: 2021-10-01T00:00:20Z
+    created_by:
+      input: 111
+      output: 111
+    parent_url:
+      input: "http://parent.url"
+      output: "http://parent.url"
+    participant:
+      input: "Participant Name"
+      output: "Participant Name"
+    participant_user:
+      input: "participant_user"
+      output: "participant_user"
+    partnership_filters:
+      input: "filter1, filter2"
+      output: "filter1, filter2"
+    partnership_status:
+      input: "active"
+      output: "active"
+    pbc_members:
+      input: "member1, member2"
+      output: "member1, member2"
+    pbc_roles:
+      input: "role1, role2"
+      output: "role1, role2"
+    prototype_description:
+      input: "Description of the prototype."
+      output: "Description of the prototype."
+    prototype_status:
+      input: "draft"
+      output: "draft"
+    template:
+      input: "template3"
+      output: "template3"
+    title:
+      input: "Coaching Partnership Title"
+      output: "Coaching Partnership Title"
+    type:
+      input: "coaching"
+      output: "coaching"
+  CollaboraEndpoint:
+    created_by:
+      input: 112
+      output: 112
+    created_at:
+      input: 1633036821
+      output: 2021-10-01T00:00:21Z
+    title:
+      input: "Collabora Endpoint Title"
+      output: "Collabora Endpoint Title"
+    type:
+      input: "endpoint"
+      output: "endpoint"
+  Comments:
+    created_at:
+      input: 1633036822
+      output: 2021-10-01T00:00:22Z
+    created_by:
+      input: 113
+      output: 113
+    recipe_key:
+      input: 202
+      output: 202
+    submit:
+      input: "Submit"
+      output: "Submit"
+    Submit:
+      input: "Submit"
+      output: "Submit"
+    text:
+      input: "Some comment text."
+      output: "Some comment text."
+    timestamp:
+      input: 1633036823
+      output: 2021-10-01T00:00:23Z
+    title:
+      input: "Comments Title"
+      output: "Comments Title"
+    type:
+      input: "comment"
+      output: "comment"
+  ConnectToMerit:
+    created_by:
+      input: 114
+      output: 114
+    created_at:
+      input: 1633036824
+      output: 2021-10-01T00:00:24Z
+    title:
+      input: "Connect to Merit Title"
+      output: "Connect to Merit Title"
+    type:
+      input: "connect"
+      output: "connect"
+  ContactForm:
+    created_by:
+      input: 115
+      output: 115
+    recipe:
+      input: "recipe2"
+      output: "recipe2"
+    created_at:
+      input: 1633036825
+      output: 2021-10-01T00:00:25Z
+    title:
+      input: "Contact Form Title"
+      output: "Contact Form Title"
+    type:
+      input: "contact"
+      output: "contact"
+    template:
+      input: "template4"
+      output: "template4"
+  CopAssets:
+    created_by:
+      input: 116
+      output: 116
+    created_at:
+      input: 1633036826
+      output: 2021-10-01T00:00:26Z
+    title:
+      input: "Cop Assets Title"
+      output: "Cop Assets Title"
+    type:
+      input: "cop_asset"
+      output: "cop_asset"
+  CopGroups:
+    cop_admins:
+      input: "admin1, admin2"
+      output: "admin1, admin2"
+    cop_group_admin:
+      input: "group_admin"
+      output: "group_admin"
+    user_id:
+      input: 117
+      output: 117
+    created_by:
+      input: 118
+      output: 118
+    cop_asset_creation:
+      input: "creation1"
+      output: "creation1"
+    hide_video_conferencing:
+      input: "no"
+      output: "no"
+    hide_cop_resources:
+      input: "yes"
+      output: "yes"
+    user_type:
+      input: "admin"
+      output: "admin"
+    parent_url:
+      input: "http://parent.url"
+      output: "http://parent.url"
+    cqelcoach_group:
+      input: 401
+      output: 401
+    created_at:
+      input: 1633036827
+      output: 2021-10-01T00:00:27Z
+    title:
+      input: "Cop Groups Title"
+      output: "Cop Groups Title"
+    type:
+      input: "cop_group"
+      output: "cop_group"
+    cop_topic_creation:
+      input: "topic1"
+      output: "topic1"
+    cop_members:
+      input: "member1, member2"
+      output: "member1, member2"
+    disable_opt_out:
+      input: "no"
+      output: "no"
+    hide_cop_members:
+      input: "yes"
+      output: "yes"
+  CopLocation:
+    created_by:
+      input: 201
+      output: 201
+    created_at:
+      input: 1633036828
+      output: 2021-10-01T00:00:28Z
+    title:
+      input: "Cop Location Title"
+      output: "Cop Location Title"
+    type:
+      input: "location"
+      output: "location"
+    template:
+      input: "templateA"
+      output: "templateA"
+  CoursesState:
+    sub_roles:
+      input: "admin"
+      output: "admin"
+    created_by:
+      input: 202
+      output: 202
+    course_name:
+      input: "Introduction to Programming"
+      output: "Introduction to Programming"
+    course_identifier:
+      input: "CS101"
+      output: "CS101"
+    course_number:
+      input: "101"
+      output: "101"
+    created_at:
+      input: 1633036829
+      output: 2021-10-01T00:00:29Z
+    lms_prototype:
+      input: "prototypeA"
+      output: "prototypeA"
+    user_access:
+      input: "full_access"
+      output: "full_access"
+    prototype_copy:
+      input: 1
+      output: 1
+    lms_course_url:
+      input: "http://lms.course.url"
+      output: "http://lms.course.url"
+    title:
+      input: "Courses State Title"
+      output: "Courses State Title"
+    type:
+      input: "course_state"
+      output: "course_state"
+  CycleDashboard:
+    created_by:
+      input: 203
+      output: 203
+    created_at:
+      input: 1633036830
+      output: 2021-10-01T00:00:30Z
+    title:
+      input: "Cycle Dashboard Title"
+      output: "Cycle Dashboard Title"
+    type:
+      input: "CycleDashboard"
+      output: "CycleDashboard"
+    template:
+      input: "templateB"
+      output: "templateB"
+  DiscussionBoards:
+    created_by:
+      input: 204
+      output: 204
+    role_designation:
+      input: "moderator"
+      output: "moderator"
+    created_at:
+      input: 1633036831
+      output: 2021-10-01T00:00:31Z
+    description:
+      input: "Discussion board description text."
+      output: "Discussion board description text."
+    title:
+      input: "Discussion Boards Title"
+      output: "Discussion Boards Title"
+    type:
+      input: "DiscussionBoards"
+      output: "DiscussionBoards"
+  DiscussionTopics:
+    created_at:
+      input: 1633036832
+      output: 2021-10-01 00:00:32
+    created_by:
+      input: 205
+      output: 205
+    id:
+      input: "topic123"
+      output: "topic123"
+    prevent_inline_media:
+      input: "no"
+      output: "no"
+    title:
+      input: "Discussion Topics Title"
+      output: "Discussion Topics Title"
+    type:
+      input: "DiscussionTopics"
+      output: "DiscussionTopics"
+    update_created_at:
+      input: "2021-09-30"
+      output: "2021-09-30"
+  Documentation:
+    created_at:
+      input: 1633036833
+      output: 2021-10-01 00:00:33
+    created_by:
+      input: 206
+      output: 206
+    title:
+      input: "Documentation Title"
+      output: "Documentation Title"
+    type:
+      input: "documentation"
+      output: "documentation"
+  DualLanguageHandbook:
+    created_by:
+      input: 207
+      output: 207
+    created_at:
+      input: 1633036834
+      output: 2021-10-01 00:00:34
+    title:
+      input: "Dual Language Handbook Title"
+      output: "Dual Language Handbook Title"
+    type:
+      input: "handbook"
+      output: "handbook"
+  DualLanguageSubmission:
+    created_by:
+      input: 208
+      output: 208
+    created_at:
+      input: 1633036835
+      output: 2021-10-01 00:00:35
+    title:
+      input: "Dual Language Submission Title"
+      output: "Dual Language Submission Title"
+    type:
+      input: "submission"
+      output: "submission"
+  Ea_eval_survey:
+    created_by:
+      input: 209
+      output: 209
+    created_at:
+      input: 1633036836
+      output: 2021-10-01 00:00:36
+    title:
+      input: "EA Eval Survey Title"
+      output: "EA Eval Survey Title"
+    type:
+      input: "survey"
+      output: "survey"
+  Endpoint:
+    created_by:
+      input: 210
+      output: 210
+    recipe:
+      input: "recipeB"
+      output: "recipeB"
+    created_at:
+      input: 1633036837
+      output: 2021-10-01 00:00:37
+    title:
+      input: "Endpoint Title"
+      output: "Endpoint Title"
+    type:
+      input: "endpoint"
+      output: "endpoint"
+  FamilySurveyLink:
+    created_by:
+      input: 211
+      output: 211
+    recipe:
+      input: "recipeC"
+      output: "recipeC"
+    created_at:
+      input: 1633036838
+      output: 2021-10-01 00:00:38
+    title:
+      input: "Family Survey Link Title"
+      output: "Family Survey Link Title"
+    type:
+      input: "survey_link"
+      output: "survey_link"
+    template:
+      input: "templateC"
+      output: "templateC"
+  Grade:
+    created_at:
+      input: 1633036839
+      output: 2021-10-01 00:00:39
+    created_by:
+      input: 212
+      output: 212
+    title:
+      input: "Grade Title"
+      output: "Grade Title"
+    type:
+      input: "grade"
+      output: "grade"
+  Inquisitor:
+    created_at:
+      input: 1633036840
+      output: 2021-10-01 00:00:40
+    created_by:
+      input: 213
+      output: 213
+    title:
+      input: "Inquisitor Title"
+      output: "Inquisitor Title"
+    type:
+      input: "inquisitor"
+      output: "inquisitor"
+  InstructorMaterials:
+    components_limit:
+      input: 10
+      output: 10
+    created_at:
+      input: 1633036841
+      output: 2021-10-01 00:00:41
+    created_by:
+      input: 214
+      output: 214
+    title:
+      input: "Instructor Materials Title"
+      output: "Instructor Materials Title"
+    type:
+      input: "materials"
+      output: "materials"
+  Item:
+    created_by:
+      input: 215
+      output: 215
+    created_at:
+      input: 1633036842
+      output: 2021-10-01 00:00:42
+    title:
+      input: "Item Title"
+      output: "Item Title"
+    type:
+      input: "item"
+      output: "item"
+    filter_by:
+      input: "category"
+      output: "category"
+  Layout:
+    created_by:
+      input: 216
+      output: 216
+    class:
+      input: "classA"
+      output: "classA"
+    created_at:
+      input: 1633036843
+      output: 2021-10-01 00:00:43
+    title:
+      input: "Layout Title"
+      output: "Layout Title"
+    type:
+      input: "layout"
+      output: "layout"
+  Limit:
+    components_limit:
+      input: 5
+      output: 5
+    created_at:
+      input: 1633036844
+      output: 2021-10-01 00:00:44
+    created_by:
+      input: 217
+      output: 217
+    recipe_key:
+      input: 301
+      output: 301
+    title:
+      input: "Limit Title"
+      output: "Limit Title"
+    type:
+      input: "limit"
+      output: "limit"
+  Links:
+    target:
+      input: "_blank"
+      output: "_blank"
+    created_by:
+      input: 218
+      output: 218
+    link_url:
+      input: "http://link.url"
+      output: "http://link.url"
+    color:
+      input: "blue"
+      output: "blue"
+    created_at:
+      input: 1633036845
+      output: 2021-10-01 00:00:45
+    role_access:
+      input: "user"
+      output: "user"
+    title:
+      input: "Links Title"
+      output: "Links Title"
+    type:
+      input: "link"
+      output: "link"
+  Lister:
+    created_by:
+      input: 219
+      output: 219
+    lister_authority_display:
+      input: "displayA"
+      output: "displayA"
+    repudiated_url:
+      input: "http://repudiated.url"
+      output: "http://repudiated.url"
+    created_at:
+      input: 1633036846
+      output: 2021-10-01 00:00:46
+    title:
+      input: "Lister Title"
+      output: "Lister Title"
+    type:
+      input: "lister"
+      output: "lister"
+    lister_authority:
+      input: "authorityB"
+      output: "authorityB"
+    template:
+      input: "templateD"
+      output: "templateD"
+    members:
+      input: "memberA, memberB"
+      output: "memberA, memberB"
+  Location:
+    order_direction:
+      input: "asc"
+      output: "asc"
+    created_by:
+      input: 220
+      output: 220
+    recipe:
+      input: "recipeD"
+      output: "recipeD"
+    children_sequencer:
+      input: "seqA"
+      output: "seqA"
+    order_by:
+      input: "name"
+      output: "name"
+    created_at:
+      input: 1633036847
+      output: 2021-10-01 00:00:47
+    title:
+      input: "Location Title"
+      output: "Location Title"
+    type:
+      input: "location"
+      output: "location"
+    template:
+      input: "templateE"
+      output: "templateE"
+  Login:
+    created_by:
+      input: 221
+      output: 221
+    recipe:
+      input: "recipeE"
+      output: "recipeE"
+    created_at:
+      input: 1633036848
+      output: 2021-10-01 00:00:48
+    title:
+      input: "Login Title"
+      output: "Login Title"
+    type:
+      input: "login"
+      output: "login"
+    login_disabled:
+      input: false
+      output: false
+    template:
+      input: "templateF"
+      output: "templateF"
+  Logout:
+    created_by:
+      input: 222
+      output: 222
+    recipe:
+      input: "recipeF"
+      output: "recipeF"
+    recipe_name:
+      input: "Logout Recipe"
+      output: "Logout Recipe"
+    created_at:
+      input: 1633036849
+      output: 2021-10-01 00:00:49
+    title:
+      input: "Logout Title"
+      output: "Logout Title"
+    type:
+      input: "logout"
+      output: "logout"
+  LtiEndpoint:
+    created_by:
+      input: 223
+      output: 223
+    recipe:
+      input: "recipeG"
+      output: "recipeG"
+    created_at:
+      input: 1633036850
+      output: 2021-10-01 00:00:50
+    title:
+      input: "LTI Endpoint Title"
+      output: "LTI Endpoint Title"
+    type:
+      input: "lti_endpoint"
+      output: "lti_endpoint"
+  ManageComponents:
+    created_by:
+      input: 224
+      output: 224
+    created_at:
+      input: 1633036851
+      output: 2021-10-01 00:00:51
+    title:
+      input: "Manage Components Title"
+      output: "Manage Components Title"
+    type:
+      input: "manage_components"
+      output: "manage_components"
+  ManageDatalists:
+    created_by:
+      input: 225
+      output: 225
+    created_at:
+      input: 1633036852
+      output: 2021-10-01 00:00:52
+    title:
+      input: "Manage Datalists Title"
+      output: "Manage Datalists Title"
+    type:
+      input: "manage_datalists"
+      output: "manage_datalists"
+  ManageGroups:
+    created_by:
+      input: 226
+      output: 226
+    created_at:
+      input: 1633036853
+      output: 2021-10-01 00:00:53
+    title:
+      input: "Manage Groups Title"
+      output: "Manage Groups Title"
+    type:
+      input: "manage_groups"
+      output: "manage_groups"
+    template:
+      input: "templateG"
+      output: "templateG"
+  ManageMenus:
+    created_by:
+      input: 227
+      output: 227
+    created_at:
+      input: 1633036854
+      output: 2021-10-01 00:00:54
+    title:
+      input: "Manage Menus Title"
+      output: "Manage Menus Title"
+    type:
+      input: "manage_menus"
+      output: "manage_menus"
+  ManageRecipes:
+    created_by:
+      input: 301
+      output: 301
+    created_at:
+      input: 1633036855
+      output: 2021-10-01 00:00:55
+    title:
+      input: "Manage Recipes Title"
+      output: "Manage Recipes Title"
+    type:
+      input: "recipe"
+      output: "recipe"
+  ManageSite:
+    created_by:
+      input: 302
+      output: 302
+    created_at:
+      input: 1633036856
+      output: 2021-10-01 00:00:56
+    title:
+      input: "Manage Site Title"
+      output: "Manage Site Title"
+    type:
+      input: "site"
+      output: "site"
+  ManageStudents:
+    created_at:
+      input: 1633036857
+      output: 2021-10-01 00:00:57
+    created_by:
+      input: 303
+      output: 303
+    role_select:
+      input: "student"
+      output: "student"
+    title:
+      input: "Manage Students Title"
+      output: "Manage Students Title"
+    type:
+      input: "student_management"
+      output: "student_management"
+  ManageUsers:
+    created_by:
+      input: 304
+      output: 304
+    created_at:
+      input: 1633036858
+      output: 2021-10-01 00:00:58
+    title:
+      input: "Manage Users Title"
+      output: "Manage Users Title"
+    type:
+      input: "user_management"
+      output: "user_management"
+  Media:
+    code:
+      input: "media123"
+      output: "media123"
+    cqelcoach_resource:
+      input: 401
+      output: 401
+    created_at:
+      input: 1633036859
+      output: 2021-10-01 00:00:59
+    created_by:
+      input: 305
+      output: 305
+    description:
+      input: "Media description text."
+      output: "Media description text."
+    disable_captions:
+      input: true
+      output: true
+    filename:
+      input: "media_file.mp4"
+      output: "media_file.mp4"
+    id:
+      input: "media001"
+      output: "media001"
+    inputtypes:
+      input: "video"
+      output: "video"
+    job_id:
+      input: "job123"
+      output: "job123"
+    link:
+      input: "http://media.link"
+      output: "http://media.link"
+    media_type:
+      input: "video"
+      output: "video"
+    name:
+      input: "Media Name"
+      output: "Media Name"
+    on_cloudfront:
+      input: "yes"
+      output: "yes"
+    path:
+      input: "/media/path"
+      output: "/media/path"
+    published:
+      input: "2021-09-30"
+      output: "2021-09-30"
+    ratings_id:
+      input: "rating123"
+      output: "rating123"
+    recipe_key:
+      input: 501
+      output: 501
+    taxonomy:
+      input: "media_taxonomy"
+      output: "media_taxonomy"
+    text:
+      input: "Additional media text."
+      output: "Additional media text."
+    title:
+      input: "Media Title"
+      output: "Media Title"
+    type:
+      input: "media"
+      output: "media"
+    vide_hightlight_location:
+      input: "locationA"
+      output: "locationA"
+    video_hightlight_alias_id:
+      input: 601
+      output: 601
+    video_hightlight_created_by:
+      input: 602
+      output: 602
+    video_hightlight_location:
+      input: "locationB"
+      output: "locationB"
+    video_hightlight_submission:
+      input: 603
+      output: 603
+    video_hightlight_submission_at:
+      input: 604
+      output: 604
+    video_hightlight_submission_copy:
+      input: 605
+      output: 605
+    vtt:
+      input: "vtt_file.vtt"
+      output: "vtt_file.vtt"
+  MediaDatabase:
+    created_by:
+      input: 306
+      output: 306
+    created_at:
+      input: 1633036860
+      output: 2021-10-01 00:01:00
+    title:
+      input: "Media Database Title"
+      output: "Media Database Title"
+    type:
+      input: "media_database"
+      output: "media_database"
+  MeritEndpoint:
+    created_by:
+      input: 307
+      output: 307
+    recipe:
+      input: "recipeH"
+      output: "recipeH"
+    created_at:
+      input: 1633036861
+      output: 2021-10-01 00:01:01
+    title:
+      input: "Merit Endpoint Title"
+      output: "Merit Endpoint Title"
+    type:
+      input: "endpoint"
+      output: "endpoint"
+  MssqlServer:
+    created_by:
+      input: 308
+      output: 308
+    username:
+      input: "db_user"
+      output: "db_user"
+    password:
+      input: "db_pass"
+      output: "db_pass"
+    created_at:
+      input: 1633036862
+      output: 2021-10-01 00:01:02
+    title:
+      input: "MSSQL Server Title"
+      output: "MSSQL Server Title"
+    type:
+      input: "database"
+      output: "database"
+    host:
+      input: "db.host.com"
+      output: "db.host.com"
+    name:
+      input: "database_name"
+      output: "database_name"
+  Note:
+    created_at:
+      input: 1633036863
+      output: 2021-10-01 00:01:03
+    created_by:
+      input: 309
+      output: 309
+    notes:
+      input: "Some notes about the record."
+      output: "Some notes about the record."
+    title:
+      input: "Note Title"
+      output: "Note Title"
+    type:
+      input: "note"
+      output: "note"
+  ProgramProfileSubmission:
+    created_by:
+      input: 310
+      output: 310
+    created_at:
+      input: 1633036864
+      output: 2021-10-01 00:01:04
+    title:
+      input: "Program Profile Submission Title"
+      output: "Program Profile Submission Title"
+    type:
+      input: "submission"
+      output: "submission"
+  RatingsRubric:
+    created_by:
+      input: 311
+      output: 311
+    created_at:
+      input: 1633036865
+      output: 2021-10-01 00:01:05
+    title:
+      input: "Ratings Rubric Title"
+      output: "Ratings Rubric Title"
+    type:
+      input: "rubric"
+      output: "rubric"
+  RecordsReviewHandbook:
+    created_by:
+      input: 312
+      output: 312
+    created_at:
+      input: 1633036866
+      output: 2021-10-01 00:01:06
+    title:
+      input: "Records Review Handbook Title"
+      output: "Records Review Handbook Title"
+    type:
+      input: "handbook"
+      output: "handbook"
+  RecordsReviewSubmission:
+    created_by:
+      input: 313
+      output: 313
+    created_at:
+      input: 1633036867
+      output: 2021-10-01 00:01:07
+    title:
+      input: "Records Review Submission Title"
+      output: "Records Review Submission Title"
+    type:
+      input: "submission"
+      output: "submission"
+  ReflectionAssignment:
+    assignment_category:
+      input: "homework"
+      output: "homework"
+    components_limit:
+      input: 3
+      output: 3
+    created_at:
+      input: 1633036868
+      output: 2021-10-01 00:01:08
+    created_by:
+      input: 314
+      output: 314
+    instructions:
+      input: "Complete the reflection assignment."
+      output: "Complete the reflection assignment."
+    recipe_key:
+      input: 701
+      output: 701
+    title:
+      input: "Reflection Assignment Title"
+      output: "Reflection Assignment Title"
+    type:
+      input: "assignment"
+      output: "assignment"
+  Reports:
+    created_by:
+      input: 315
+      output: 315
+    created_at:
+      input: 1633036869
+      output: 2021-10-01 00:01:09
+    title:
+      input: "Reports Title"
+      output: "Reports Title"
+    type:
+      input: "report"
+      output: "report"
+    report_types:
+      input: "summary"
+      output: "summary"
+  ReportsBuilder:
+    created_by:
+      input: 316
+      output: 316
+    recipe:
+      input: "recipeI"
+      output: "recipeI"
+    created_at:
+      input: 1633036870
+      output: 2021-10-01 00:01:10
+    title:
+      input: "Reports Builder Title"
+      output: "Reports Builder Title"
+    type:
+      input: "report_builder"
+      output: "report_builder"
+    report_types:
+      input: "detailed"
+      output: "detailed"
+  ResetPassword:
+    created_by:
+      input: 317
+      output: 317
+    recipe:
+      input: "recipeJ"
+      output: "recipeJ"
+    created_at:
+      input: 1633036871
+      output: 2021-10-01 00:01:11
+    title:
+      input: "Reset Password Title"
+      output: "Reset Password Title"
+    type:
+      input: "reset_password"
+      output: "reset_password"
+    template:
+      input: "templateH"
+      output: "templateH"
+  ResourceLibrary:
+    created_by:
+      input: 318
+      output: 318
+    created_at:
+      input: 1633036872
+      output: 2021-10-01 00:01:12
+    title:
+      input: "Resource Library Title"
+      output: "Resource Library Title"
+    type:
+      input: "library"
+      output: "library"
+  SharedAssets:
+    created_by:
+      input: 319
+      output: 319
+    created_at:
+      input: 1633036873
+      output: 2021-10-01 00:01:13
+    title:
+      input: "Shared Assets Title"
+      output: "Shared Assets Title"
+    type:
+      input: "asset"
+      output: "asset"
+    template:
+      input: "templateI"
+      output: "templateI"
+  SharedGoals:
+    completed_at:
+      input: 1633036874
+      output: 2021-10-01 00:01:14
+    core_knowledge_categories:
+      input: "categoryA"
+      output: "categoryA"
+    created_at:
+      input: 1633036875
+      output: 2021-10-01 00:01:15
+    created_by:
+      input: 320
+      output: 320
+    cycle_summary:
+      input: "Summary of the cycle."
+      output: "Summary of the cycle."
+    info:
+      input: "Additional information."
+      output: "Additional information."
+    prototype_id:
+      input: 801
+      output: 801
+    status:
+      input: "completed"
+      output: "completed"
+    title:
+      input: "Shared Goals Title"
+      output: "Shared Goals Title"
+    type:
+      input: "goal"
+      output: "goal"
+  Solotron:
+    created_by:
+      input: 321
+      output: 321
+    created_at:
+      input: 1633036876
+      output: 2021-10-01 00:01:16
+    title:
+      input: "Solotron Title"
+      output: "Solotron Title"
+    type:
+      input: "solotron"
+      output: "solotron"
+    can_survey_components:
+      input: "componentA"
+      output: "componentA"
+  StudentSubmissions:
+    created_at:
+      input: 1633036877
+      output: 2021-10-01 00:01:17
+    created_by:
+      input: 322
+      output: 322
+    title:
+      input: "Student Submission Title"
+      output: "Student Submission Title"
+    type:
+      input: "StudentSubmissions"
+      output: "StudentSubmissions"
+  StudentSubmissionsSlug:
+    created_by:
+      input: 323
+      output: 323
+    created_at:
+      input: 1633036878
+      output: 2021-10-01 00:01:18
+    title:
+      input: "Student Submissions Slug Title"
+      output: "Student Submissions Slug Title"
+    type:
+      input: "submission_slug"
+      output: "submission_slug"
+  SupportingDocumentation:
+    created_at:
+      input: 1633036879
+      output: 2021-10-01 00:01:19
+    created_by:
+      input: 324
+      output: 324
+    title:
+      input: "Supporting Documentation Title"
+      output: "Supporting Documentation Title"
+    type:
+      input: "documentation"
+      output: "documentation"
+  Tagit:
+    created_by:
+      input: 325
+      output: 325
+    timestamp:
+      input: 1633036880
+      output: 1633036880
+    created_at:
+      input: 1633036881
+      output: 2021-10-01 00:01:21
+    title:
+      input: "Tagit Title"
+      output: "Tagit Title"
+    type:
+      input: "tag"
+      output: "tag"
+  Tracker:
+    created_by:
+      input: 326
+      output: 326
+    created_at:
+      input: 1633036882
+      output: 2021-10-01 00:01:22
+    description:
+      input: "Tracker description text."
+      output: "Tracker description text."
+    title:
+      input: "Tracker Title"
+      output: "Tracker Title"
+    type:
+      input: "tracker"
+      output: "tracker"
+    template:
+      input: "templateJ"
+      output: "templateJ"
+  UnassignedAssets:
+    created_by:
+      input: 401
+      output: 401
+    created_at:
+      input: 1633036883
+      output: 2021-10-01 00:01:23
+    title:
+      input: "Unassigned Assets Title"
+      output: "Unassigned Assets Title"
+    type:
+      input: "asset"
+      output: "asset"
+    template:
+      input: "templateK"
+      output: "templateK"
+  UploadAndReflectionAssignment:
+    assignment_category:
+      input: "homework"
+      output: "homework"
+    components_limit:
+      input: 5
+      output: 5
+    created_at:
+      input: 1633036884
+      output: 2021-10-01 00:01:24
+    created_by:
+      input: 402
+      output: 402
+    grading_rubric:
+      input: "Grading rubric text."
+      output: "Grading rubric text."
+    instructions:
+      input: "Assignment instructions text."
+      output: "Assignment instructions text."
+    recipe_key:
+      input: 901
+      output: 901
+    title:
+      input: "Upload and Reflection Assignment Title"
+      output: "Upload and Reflection Assignment Title"
+    type:
+      input: "assignment"
+      output: "assignment"
+  UserInvitations:
+    created_by:
+      input: 403
+      output: 403
+    recipe:
+      input: "recipeK"
+      output: "recipeK"
+    created_at:
+      input: 1633036885
+      output: 2021-10-01 00:01:25
+    title:
+      input: "User Invitations Title"
+      output: "User Invitations Title"
+    type:
+      input: "invitation"
+      output: "invitation"
+    template:
+      input: "templateL"
+      output: "templateL"
+  UserSettings:
+    created_by:
+      input: 404
+      output: 404
+    recipe:
+      input: "recipeL"
+      output: "recipeL"
+    recipe_name:
+      input: "User Settings Recipe"
+      output: "User Settings Recipe"
+    created_at:
+      input: 1633036886
+      output: 2021-10-01 00:01:26
+    title:
+      input: "User Settings Title"
+      output: "User Settings Title"
+    type:
+      input: "settings"
+      output: "settings"
+  UserSubmissions:
+    created_by:
+      input: 405
+      output: 405
+    recipe:
+      input: "recipeM"
+      output: "recipeM"
+    can_view:
+      input: "view_permission"
+      output: "view_permission"
+    repudiated_url:
+      input: "http://repudiated.url"
+      output: "http://repudiated.url"
+    created_at:
+      input: 1633036887
+      output: 2021-10-01 00:01:27
+    can_submit:
+      input: "submit_permission"
+      output: "submit_permission"
+    title:
+      input: "User Submissions Title"
+      output: "User Submissions Title"
+    type:
+      input: "submission"
+      output: "submission"
+    content_administrator:
+      input: "admin"
+      output: "admin"
+  UsersLogAllAttributes:
+    created_by:
+      input: 406
+      output: 406
+    created_at:
+      input: 1633036888
+      output: 2021-10-01 00:01:28
+    title:
+      input: "Users Log All Attributes Title"
+      output: "Users Log All Attributes Title"
+    type:
+      input: "log"
+      output: "log"
+  UsersLogCompletedGoals:
+    created_by:
+      input: 407
+      output: 407
+    created_at:
+      input: 1633036889
+      output: 2021-10-01 00:01:29
+    title:
+      input: "Users Log Completed Goals Title"
+      output: "Users Log Completed Goals Title"
+    type:
+      input: "log"
+      output: "log"
+  UsersLogCopGroups:
+    created_by:
+      input: 408
+      output: 408
+    created_at:
+      input: 1633036890
+      output: 2021-10-01 00:01:30
+    title:
+      input: "Users Log Cop Groups Title"
+      output: "Users Log Cop Groups Title"
+    type:
+      input: "log"
+      output: "log"
+  UsersLogCopGroupsDigest:
+    created_by:
+      input: 409
+      output: 409
+    created_at:
+      input: 1633036891
+      output: 2021-10-01 00:01:31
+    title:
+      input: "Users Log Cop Groups Digest Title"
+      output: "Users Log Cop Groups Digest Title"
+    type:
+      input: "log"
+      output: "log"
+  UsersLogCreatedAt:
+    created_by:
+      input: 410
+      output: 410
+    created_at:
+      input: 1633036892
+      output: 2021-10-01 00:01:32
+    title:
+      input: "Users Log Created At Title"
+      output: "Users Log Created At Title"
+    type:
+      input: "log"
+      output: "log"
+  UsersLogPartnerships:
+    created_by:
+      input: 411
+      output: 411
+    created_at:
+      input: 1633036893
+      output: 2021-10-01 00:01:33
+    title:
+      input: "Users Log Partnerships Title"
+      output: "Users Log Partnerships Title"
+    type:
+      input: "log"
+      output: "log"
+  UsersLogProperties:
+    created_by:
+      input: 412
+      output: 412
+    created_at:
+      input: 1633036894
+      output: 2021-10-01 00:01:34
+    title:
+      input: "Users Log Properties Title"
+      output: "Users Log Properties Title"
+    type:
+      input: "log"
+      output: "log"
+  UsersLogReporting:
+    created_by:
+      input: 413
+      output: 413
+    created_at:
+      input: 1633036895
+      output: 2021-10-01 00:01:35
+    title:
+      input: "Users Log Reporting Title"
+      output: "Users Log Reporting Title"
+    type:
+      input: "log"
+      output: "log"
+  UsersLogSharedGoals:
+    created_by:
+      input: 414
+      output: 414
+    created_at:
+      input: 1633036896
+      output: 2021-10-01 00:01:36
+    title:
+      input: "Users Log Shared Goals Title"
+      output: "Users Log Shared Goals Title"
+    type:
+      input: "log"
+      output: "log"
+  UsersLogUploads:
+    created_by:
+      input: 415
+      output: 415
+    created_at:
+      input: 1633036897
+      output: 2021-10-01 00:01:37
+    title:
+      input: "Users Log Uploads Title"
+      output: "Users Log Uploads Title"
+    type:
+      input: "log"
+      output: "log"
+  VideoConference:
+    created_by:
+      input: 416
+      output: 416
+    created_at:
+      input: 1633036898
+      output: 2021-10-01 00:01:38
+    title:
+      input: "Video Conference Title"
+      output: "Video Conference Title"
+    type:
+      input: "conference"
+      output: "conference"
+  VideoHighlightSubmission:
+    created_by:
+      input: 417
+      output: 417
+    created_at:
+      input: 1633036899
+      output: 2021-10-01 00:01:39
+    title:
+      input: "Video Highlight Submission Title"
+      output: "Video Highlight Submission Title"
+    type:
+      input: "submission"
+      output: "submission"
+  VideoReflection:
+    created_at:
+      input: 1633036900
+      output: 2021-10-01 00:01:40
+    created_by:
+      input: 418
+      output: 418
+    idClassroom:
+      input: 1001
+      output: 1001
+    idRating:
+      input: 1002
+      output: 1002
+    idVHResponse:
+      input: 1003
+      output: 1003
+    parent_url:
+      input: "http://parent.url"
+      output: "http://parent.url"
+    procedure:
+      input: "procedureA"
+      output: "procedureA"
+    ratings_id:
+      input: "rating001"
+      output: "rating001"
+    reflection_input:
+      input: "Reflection input text."
+      output: "Reflection input text."
+    title:
+      input: "Video Reflection Title"
+      output: "Video Reflection Title"
+    type:
+      input: "reflection"
+      output: "reflection"
+    updated_on:
+      input: 1633036901
+      output: 2021-10-01 00:01:41
