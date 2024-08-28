@@ -32,8 +32,8 @@ vce_components_meta:
       input: 789
       output: 789
     repudiated_url:
-      input: "http://example.com"
-      output: "http://example.com"
+      input: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
+      output: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
     role_access:
       input: "admin"
       output: "admin"
@@ -117,8 +117,8 @@ vce_components_meta:
       input: "Add Play By Play Title"
       output: "Add Play By Play Title"
     type:
-      input: "play_by_play"
-      output: "play_by_play"
+      input: "AddPlayByPlay"
+      output: "AddPlayByPlay"
   Alias:
     alias_id:
       input: !!int 78901234567890123505
@@ -172,8 +172,8 @@ vce_components_meta:
       input: "Alias Title"
       output: "Alias Title"
     type:
-      input: "alias"
-      output: "alias"
+      input: "Alias"
+      output: "Alias"
   Annotations:
     created_at:
       input: 1633036809
@@ -191,8 +191,8 @@ vce_components_meta:
       input: "Annotations Title"
       output: "Annotations Title"
     type:
-      input: "annotation"
-      output: "annotation"
+      input: "Annotations"
+      output: "Annotations"
   AssessmentsClassroom:
     created_by:
       input: !!int 78901234567890123456
@@ -204,8 +204,8 @@ vce_components_meta:
       input: "Classroom Assessment Title"
       output: "Classroom Assessment Title"
     type:
-      input: "classroom"
-      output: "classroom"
+      input: "AssessmentsClassroom"
+      output: "AssessmentsClassroom"
   AssessmentsDashboard:
     created_by:
       input: !!int 78901234567890123456
@@ -217,8 +217,8 @@ vce_components_meta:
       input: "Dashboard Assessment Title"
       output: "Dashboard Assessment Title"
     type:
-      input: "dashboard"
-      output: "dashboard"
+      input: "AssessmentsDashboard"
+      output: "AssessmentsDashboard"
   AssessmentsEvaluation:
     created_by:
       input: !!int 78901234567890123456
@@ -236,8 +236,8 @@ vce_components_meta:
       input: "Evaluation Title"
       output: "Evaluation Title"
     type:
-      input: "evaluation"
-      output: "evaluation"
+      input: "AssessmentsEvaluation"
+      output: "AssessmentsEvaluation"
   AssessmentsLister:
     created_by:
       input: !!int 78901234567890123456
@@ -252,8 +252,8 @@ vce_components_meta:
       input: "Lister Title"
       output: "Lister Title"
     type:
-      input: "lister"
-      output: "lister"
+      input: "AssessmentsLister"
+      output: "AssessmentsLister"
     lister_authority:
       input: "authority1"
       output: "authority1"
@@ -271,8 +271,8 @@ vce_components_meta:
       input: "Rating Title"
       output: "Rating Title"
     type:
-      input: "rating"
-      output: "rating"
+      input: "AssessmentsRating"
+      output: "AssessmentsRating"
   AssessmentsReport:
     created_by:
       input: !!int 78901234567890123456
@@ -287,11 +287,11 @@ vce_components_meta:
       input: "Report Title"
       output: "Report Title"
     type:
-      input: "report"
-      output: "report"
+      input: "AssessmentsReport"
+      output: "AssessmentsReport"
     title_esp:
-      input: "Título del Informe"
-      output: "Título del Informe"
+      input: "Titulo del informe"
+      output: "Titulo del informe"
   AssessmentsReportClassroom:
     created_by:
       input: !!int 78901234567890123456
@@ -306,8 +306,8 @@ vce_components_meta:
       input: "Classroom Report Title"
       output: "Classroom Report Title"
     type:
-      input: "classroom_report"
-      output: "classroom_report"
+      input: "AssessmentsReportClassroom"
+      output: "AssessmentsReportClassroom"
   AssessmentsSite:
     created_by:
       input: !!int 78901234567890123456
@@ -319,8 +319,8 @@ vce_components_meta:
       input: "Site Assessment Title"
       output: "Site Assessment Title"
     type:
-      input: "site"
-      output: "site"
+      input: "AssessmentsSite"
+      output: "AssessmentsSite"
     template:
       input: "template2"
       output: "template2"
@@ -334,15 +334,15 @@ vce_components_meta:
     assets_members:
       input: "member1, member2"
       output: "member1, member2"
-    cqelcoach_observation:
-      input: 301
-      output: 301
+    cqelcoach_observation: # Should this become a BigInteger?
+      input: !!int 301
+      output: !!int 301
     created_at:
       input: 1633036818
       output: 2021-10-01T00:00:18Z
     created_by:
-      input: 109
-      output: 109
+      input: !!int 7890123456789012109
+      output: !!int 7890123456789012109
     media_type:
       input: "video"
       output: "video"
@@ -362,21 +362,21 @@ vce_components_meta:
       input: "Assets Title"
       output: "Assets Title"
     type:
-      input: "asset"
-      output: "asset"
+      input: "Assets"
+      output: "Assets"
   Assignments:
     created_at:
       input: 1633036819
       output: 2021-10-01T00:00:19Z
     created_by:
-      input: 110
-      output: 110
+      input: !!int 7890123456789012110
+      output: !!int 7890123456789012110
     title:
       input: "Assignment Title"
       output: "Assignment Title"
     type:
-      input: "assignment"
-      output: "assignment"
+      input: "Assignments"
+      output: "Assignments"
   CoachingPartnership:
     coach:
       input: "Coach Name"
@@ -397,8 +397,8 @@ vce_components_meta:
       input: 111
       output: 111
     parent_url:
-      input: "http://parent.url"
-      output: "http://parent.url"
+      input: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
+      output: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
     participant:
       input: "Participant Name"
       output: "Participant Name"
@@ -430,12 +430,12 @@ vce_components_meta:
       input: "Coaching Partnership Title"
       output: "Coaching Partnership Title"
     type:
-      input: "coaching"
-      output: "coaching"
+      input: "CoachingPartnership"
+      output: "CoachingPartnership"
   CollaboraEndpoint:
     created_by:
-      input: 112
-      output: 112
+      input: !!int 7890123456789012112
+      output: !!int 7890123456789012112
     created_at:
       input: 1633036821
       output: 2021-10-01T00:00:21Z
@@ -443,21 +443,21 @@ vce_components_meta:
       input: "Collabora Endpoint Title"
       output: "Collabora Endpoint Title"
     type:
-      input: "endpoint"
-      output: "endpoint"
+      input: "CollaboraEndpoint"
+      output: "CollaboraEndpoint"
   Comments:
     created_at:
       input: 1633036822
       output: 2021-10-01T00:00:22Z
     created_by:
-      input: 113
-      output: 113
+      input: !!int 7890123456789012113
+      output: !!int 7890123456789012113
     recipe_key:
-      input: 202
-      output: 202
+      input: !!int 7890123456789012202
+      output: !!int 7890123456789012202
     submit:
-      input: "Submit"
-      output: "Submit"
+      input: "submit"
+      output: "submit"
     Submit:
       input: "Submit"
       output: "Submit"
@@ -471,12 +471,12 @@ vce_components_meta:
       input: "Comments Title"
       output: "Comments Title"
     type:
-      input: "comment"
-      output: "comment"
+      input: "Comments"
+      output: "Comments"
   ConnectToMerit:
     created_by:
-      input: 114
-      output: 114
+      input: !!int 7890123456789012114
+      output: !!int 7890123456789012114
     created_at:
       input: 1633036824
       output: 2021-10-01T00:00:24Z
@@ -484,12 +484,12 @@ vce_components_meta:
       input: "Connect to Merit Title"
       output: "Connect to Merit Title"
     type:
-      input: "connect"
-      output: "connect"
+      input: "ConnectToMerit"
+      output: "ConnectToMerit"
   ContactForm:
     created_by:
-      input: 115
-      output: 115
+      input: !!int 7890123456789012115
+      output: !!int 7890123456789012115
     recipe:
       input: "recipe2"
       output: "recipe2"
@@ -500,15 +500,15 @@ vce_components_meta:
       input: "Contact Form Title"
       output: "Contact Form Title"
     type:
-      input: "contact"
-      output: "contact"
+      input: "ContactForm"
+      output: "ContactForm"
     template:
       input: "template4"
       output: "template4"
   CopAssets:
     created_by:
-      input: 116
-      output: 116
+      input: !!int 7890123456789012116
+      output: !!int 7890123456789012116
     created_at:
       input: 1633036826
       output: 2021-10-01T00:00:26Z
@@ -516,8 +516,8 @@ vce_components_meta:
       input: "Cop Assets Title"
       output: "Cop Assets Title"
     type:
-      input: "cop_asset"
-      output: "cop_asset"
+      input: "CopAssets"
+      output: "CopAssets"
   CopGroups:
     cop_admins:
       input: "admin1, admin2"
@@ -525,30 +525,30 @@ vce_components_meta:
     cop_group_admin:
       input: "group_admin"
       output: "group_admin"
-    user_id:
-      input: 117
-      output: 117
+    user_id: # Should this become a BigInteger?
+      input: !!int 7890123456789012117
+      output: !!int 7890123456789012117
     created_by:
-      input: 118
-      output: 118
+      input: !!int 7890123456789012118
+      output: !!int 7890123456789012118
     cop_asset_creation:
       input: "creation1"
       output: "creation1"
-    hide_video_conferencing:
+    hide_video_conferencing: # Should this become a boolean?
       input: "no"
       output: "no"
-    hide_cop_resources:
+    hide_cop_resources: # Should this become a boolean?
       input: "yes"
       output: "yes"
-    user_type:
+    user_type: # Should be a separate table?
       input: "admin"
       output: "admin"
     parent_url:
-      input: "http://parent.url"
-      output: "http://parent.url"
+      input: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
+      output: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
     cqelcoach_group:
-      input: 401
-      output: 401
+      input: !!int 401
+      output: !!int 401
     created_at:
       input: 1633036827
       output: 2021-10-01T00:00:27Z
@@ -556,18 +556,18 @@ vce_components_meta:
       input: "Cop Groups Title"
       output: "Cop Groups Title"
     type:
-      input: "cop_group"
-      output: "cop_group"
+      input: "CopGroups"
+      output: "CopGroups"
     cop_topic_creation:
       input: "topic1"
       output: "topic1"
     cop_members:
       input: "member1, member2"
       output: "member1, member2"
-    disable_opt_out:
+    disable_opt_out: # Should this become a boolean?
       input: "no"
       output: "no"
-    hide_cop_members:
+    hide_cop_members: # Should this become a boolean?
       input: "yes"
       output: "yes"
   CopLocation:
@@ -615,18 +615,18 @@ vce_components_meta:
       input: 1
       output: 1
     lms_course_url:
-      input: "http://lms.course.url"
-      output: "http://lms.course.url"
+      input: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
+      output: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
     title:
       input: "Courses State Title"
       output: "Courses State Title"
     type:
-      input: "course_state"
-      output: "course_state"
+      input: "CoursesState"
+      output: "CoursesState"
   CycleDashboard:
     created_by:
-      input: 203
-      output: 203
+      input: !!int 7890123456789012203
+      output: !!int 7890123456789012203
     created_at:
       input: 1633036830
       output: 2021-10-01T00:00:30Z
@@ -641,8 +641,8 @@ vce_components_meta:
       output: "templateB"
   DiscussionBoards:
     created_by:
-      input: 204
-      output: 204
+      input: !!int 7890123456789012204
+      output: !!int 7890123456789012204
     role_designation:
       input: "moderator"
       output: "moderator"
@@ -663,11 +663,11 @@ vce_components_meta:
       input: 1633036832
       output: 2021-10-01 00:00:32
     created_by:
-      input: 205
-      output: 205
+      input: !!int 7890123456789012205
+      output: !!int 7890123456789012205
     id:
-      input: "topic123"
-      output: "topic123"
+      input: !!int 7890123456789012555
+      output: !!int 7890123456789012555
     prevent_inline_media:
       input: "no"
       output: "no"
@@ -678,8 +678,8 @@ vce_components_meta:
       input: "DiscussionTopics"
       output: "DiscussionTopics"
     update_created_at:
-      input: "2021-09-30"
-      output: "2021-09-30"
+      input: 1633036832
+      output: 2021-10-01 00:00:32
   Documentation:
     created_at:
       input: 1633036833
@@ -868,8 +868,8 @@ vce_components_meta:
       input: 218
       output: 218
     link_url:
-      input: "http://link.url"
-      output: "http://link.url"
+      input: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
+      output: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
     color:
       input: "blue"
       output: "blue"
@@ -893,8 +893,8 @@ vce_components_meta:
       input: "displayA"
       output: "displayA"
     repudiated_url:
-      input: "http://repudiated.url"
-      output: "http://repudiated.url"
+      input: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
+      output: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
     created_at:
       input: 1633036846
       output: 2021-10-01 00:00:46
@@ -1643,8 +1643,8 @@ vce_components_meta:
       input: "view_permission"
       output: "view_permission"
     repudiated_url:
-      input: "http://repudiated.url"
-      output: "http://repudiated.url"
+      input: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
+      output: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
     created_at:
       input: 1633036887
       output: 2021-10-01 00:01:27
@@ -1833,8 +1833,8 @@ vce_components_meta:
       input: 1003
       output: 1003
     parent_url:
-      input: "http://parent.url"
-      output: "http://parent.url"
+      input: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
+      output: "https://my-fake-bucket.s3.amazonaws.com/fake-object-key"
     procedure:
       input: "procedureA"
       output: "procedureA"

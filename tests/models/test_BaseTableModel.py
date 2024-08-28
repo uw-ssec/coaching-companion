@@ -1,3 +1,4 @@
 import pytest
-from ..models import BaseTableModel
+import yaml
+from coaching_companion import BaseTableModel
 

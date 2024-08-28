@@ -21,15 +21,13 @@ classifiers = [
   "Programming Language :: Python",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: Implementation :: CPython",
-  "Programming Language :: Python :: Implementation :: PyPy",
+  "Programming Language :: Python :: 3.12"
 ]
 
 [project.urls]
-Documentation = "https://github.com/Cordero Core/coaching-companion#readme"
-Issues = "https://github.com/Cordero Core/coaching-companion/issues"
-Source = "https://github.com/Cordero Core/coaching-companion"
+Documentation = "https://github.com/uwcdc/coaching-companion#readme"
+Issues = "https://github.com/uwcdc/coaching-companion/issues"
+Source = "https://github.com/uwcdc/coaching-companion"
 
 [tool.hatch.metadata.hooks.requirements_txt]
 files = ["requirements.txt"]
@@ -44,5 +42,5 @@ version-file = "src/coaching_companion/_version.py"
 local_scheme = "no-local-version"
 
 [tool.ruff]
-# Same as Black.
+# Same as Black
 line-length = 100
