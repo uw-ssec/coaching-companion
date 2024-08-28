@@ -1,0 +1,8 @@
+ibis-framework
+hatch
+pre-commit
+psycopg2-binary
+pydantic
+pytest
+sqlalchemy
+sqlmodel

@@ -1,0 +1,1 @@
+pg_restore -d dump-cc_django_monolithic-202408141009 dump-cc_django_monolithic-202408141009.sql
