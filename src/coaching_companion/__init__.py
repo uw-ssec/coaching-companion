@@ -2,6 +2,7 @@ from ._version import version as VERSION  # noqa
 
 from .models import (
     BaseTableModel,
+    AuthUser,
     AWSDashboard,
     Access,
     AccreditationCertificate,
@@ -104,6 +105,7 @@ __author__ = "Cordero Core"
 
 __all__ = [
     'BaseTableModel',
+    'AuthUser',
     'AWSDashboard',
     'Access',
     'AccreditationCertificate',

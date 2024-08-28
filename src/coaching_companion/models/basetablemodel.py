@@ -1,5 +1,5 @@
 from typing import Optional
-from sqlmodel import SQLModel, Field
+from sqlmodel import SQLModel, Field, Relationship
 from datetime import datetime, timezone
 from pydantic import field_validator, HttpUrl
 from sqlalchemy import BigInteger
@@ -23,9 +23,10 @@ def convert_str_to_url(cls, value):
 
 # The BaseTableModel class is a base class for all the tables in the database.
 class BaseTableModel(SQLModel, table=False):
+    
     id: Optional[int] = Field(default=None, primary_key=True)
     created_at: datetime = Field(default=None, sa_column_kwargs={"nullable": False})
-    created_by: int = Field(default=None, foreign_key="auth_user.id", sa_type=BigInteger, sa_column_kwargs={"nullable": False})
+    created_by: int = Field(default=None, foreign_key="public.auth_user.id", sa_type=BigInteger, sa_column_kwargs={"nullable": False})
     title: str = Field(default=None, max_length=255)
     type_: Optional[str] = Field(default=None, max_length=50)  # Optional varchar(50) field
 

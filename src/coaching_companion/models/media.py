@@ -29,7 +29,7 @@ class Media(BaseTableModel, table=True):
     text: str = Field(default=None)
     vide_hightlight_location: str = Field(default=None, max_length=100)
     video_hightlight_alias_id: uuid.UUID = Field(default=None, sa_type=UUID)
-    video_hightlight_created_by: int = Field(default=None, foreign_key="auth_user.id")
+    video_hightlight_created_by: int = Field(default=None, foreign_key="public.auth_user.id")
     video_hightlight_location: str = Field(default=None, max_length=100)
     video_hightlight_submission: int = Field(default=None, sa_type=Text)
     video_hightlight_submission_at: datetime = Field(default=None)

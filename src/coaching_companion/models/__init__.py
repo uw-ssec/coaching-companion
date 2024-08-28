@@ -1,4 +1,5 @@
 from .basetablemodel import BaseTableModel
+from .authuser import AuthUser
 from .awsdashboard import AWSDashboard
 from .access import Access
 from .accreditationcertificate import AccreditationCertificate
@@ -97,6 +98,7 @@ from .videoreflection import VideoReflection
 
 __all__ = [
     'BaseTableModel',
+    'AuthUser',
     'AWSDashboard',
     'Access',
     'AccreditationCertificate',
