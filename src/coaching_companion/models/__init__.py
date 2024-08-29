@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 from .authuser import AuthUser
 from .awsdashboard import AWSDashboard
 from .access import Access

@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class MediaDatabase(BaseTableModel, table=True):
     __tablename__ = "media_database"

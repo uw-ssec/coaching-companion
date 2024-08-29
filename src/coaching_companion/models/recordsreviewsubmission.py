@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class RecordsReviewSubmission(BaseTableModel, table=True):
     __tablename__ = "records_review_submission"

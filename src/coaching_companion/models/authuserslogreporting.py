@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class AuthUsersLogReporting(BaseTableModel, table=True):
     __tablename__ = "auth_users_log_reporting"

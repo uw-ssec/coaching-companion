@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel, convert_timestamp_to_datetime
+from ._basetablemodel import BaseTableModel, convert_timestamp_to_datetime
 
 from sqlmodel import Field
 from sqlalchemy import UUID

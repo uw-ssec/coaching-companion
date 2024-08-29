@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class ManageDatalists(BaseTableModel, table=True):
     __tablename__ = "manage_datalists"

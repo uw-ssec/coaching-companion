@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class VideoConference(BaseTableModel, table=True):
     __tablename__ = "video_conference"

@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class AuthUsersLogCompletedGoals(BaseTableModel, table=True):
     __tablename__ = "auth_users_log_completed_goals"

@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class ManageComponents(BaseTableModel, table=True):
     __tablename__ = "manage_components"
