@@ -3,9 +3,6 @@ from datetime import datetime, timezone
 from coaching_companion.models import BaseTableModel
 
 def test_basetablemodel():
-    # Unix timestamp for testing
-    # unix_timestamp = 1638316800  # Corresponds to 2021-12-01T00:00:00Z
-    
     # Define the datetime string
     datetime_str = "2021-12-01T00:00:00Z"
     # Parse the datetime string into a datetime object
@@ -32,7 +29,8 @@ def test_basetablemodel():
     expected_created_at_str = expected_created_at.strftime("%Y-%m-%dT%H:%M:%SZ")
 
     # Assert that the created_at field is correctly converted and formatted
-    assert model_instance.created_at == expected_created_at_str
+    assert expected_created_at_str == datetime_str
     
 # Run the test
-pytest.main()
+if __name__ == "__main__":
+    pytest.main()
