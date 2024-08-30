@@ -1,5 +1,5 @@
 models: [
-    # 'AWSDashboard',
+    'AWSDashboard',
     'Access',
     'AccreditationCertificate',
     'ActionPlans',

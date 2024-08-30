@@ -20,7 +20,7 @@ def test_instructormaterials():
 
     # Assert that the fields are correctly set
     assert dashboard.created_by == int(12345678901234567890)
-    assert dashboard.title == "Test Title"
+    assert dashboard.title == "Test InstructorMaterials Title"
     assert dashboard.type_ == "instructormaterials"
 
     # Convert the Unix timestamp to a UTC datetime object
@@ -57,9 +57,23 @@ def test_instructormaterials_name_max_length():
     
     # Create an instance of InstructorMaterials with a name exceeding max_length
     long_name = "A" * 300
-    InstructorMaterials(title=long_name, created_at=unix_timestamp)
+    # Validate the title
+    with pytest.raises(ValueError):
+        InstructorMaterials.model_validate({"title": long_name})
+    # Validate the created_by
+    with pytest.raises(ValueError):
+        InstructorMaterials.model_validate({"created_by": long_name})
+    # Validate the created_at
+    with pytest.raises(ValueError):
+        InstructorMaterials.model_validate({"created_at": long_name})
+    # Validate the type_
+    with pytest.raises(ValueError):
+        InstructorMaterials.model_validate({"type_": long_name})
 
 # Run the tests
 if __name__ == "__main__":
     pytest.main()
+    
+# References:
+# - https://github.com/fastapi/sqlmodel/issues/52
     

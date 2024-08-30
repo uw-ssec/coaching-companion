@@ -20,7 +20,7 @@ def test_tagit():
 
     # Assert that the fields are correctly set
     assert dashboard.created_by == int(12345678901234567890)
-    assert dashboard.title == "Test Title"
+    assert dashboard.title == "Test Tagit Title"
     assert dashboard.type_ == "tagit"
 
     # Convert the Unix timestamp to a UTC datetime object
@@ -57,9 +57,23 @@ def test_tagit_name_max_length():
     
     # Create an instance of Tagit with a name exceeding max_length
     long_name = "A" * 300
-    Tagit(title=long_name, created_at=unix_timestamp)
+    # Validate the title
+    with pytest.raises(ValueError):
+        Tagit.model_validate({"title": long_name})
+    # Validate the created_by
+    with pytest.raises(ValueError):
+        Tagit.model_validate({"created_by": long_name})
+    # Validate the created_at
+    with pytest.raises(ValueError):
+        Tagit.model_validate({"created_at": long_name})
+    # Validate the type_
+    with pytest.raises(ValueError):
+        Tagit.model_validate({"type_": long_name})
 
 # Run the tests
 if __name__ == "__main__":
     pytest.main()
+    
+# References:
+# - https://github.com/fastapi/sqlmodel/issues/52
     
