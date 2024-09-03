@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class Grade(BaseTableModel, table=True):
     __tablename__ = "grade"

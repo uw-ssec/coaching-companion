@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class RatingsRubric(BaseTableModel, table=True):
     __tablename__ = "ratings_rubric"

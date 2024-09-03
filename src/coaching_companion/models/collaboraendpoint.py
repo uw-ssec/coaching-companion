@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class CollaboraEndpoint(BaseTableModel, table=True):
     __tablename__ = "collabora_endpoint"

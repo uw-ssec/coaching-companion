@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class ManageMenus(BaseTableModel, table=True):
     __tablename__ = "manage_menus"

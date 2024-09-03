@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class AssessmentsDashboard(BaseTableModel, table=True):
     __tablename__ = "assessments_dashboard"

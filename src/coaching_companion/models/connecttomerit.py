@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class ConnectToMerit(BaseTableModel, table=True):
     __tablename__ = "connect_to_merit"

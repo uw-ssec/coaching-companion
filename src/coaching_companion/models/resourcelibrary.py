@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class ResourceLibrary(BaseTableModel, table=True):
     __tablename__ = "resource_library"

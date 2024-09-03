@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel, convert_str_to_url
+from ._basetablemodel import BaseTableModel, convert_str_to_url
 
 from sqlmodel import Field
 from sqlalchemy import Text, UUID

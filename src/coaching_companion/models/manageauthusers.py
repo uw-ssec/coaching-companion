@@ -1,4 +1,4 @@
-from .basetablemodel import BaseTableModel
+from ._basetablemodel import BaseTableModel
 
 class ManageAuthUsers(BaseTableModel, table=True):
     __tablename__ = "manage_auth_users"
