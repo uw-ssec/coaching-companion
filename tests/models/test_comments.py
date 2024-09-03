@@ -2,14 +2,15 @@ import pytest
 from datetime import datetime, timezone
 from coaching_companion.models import Comments
 
-def test_comments():
-    # Define the datetime string
-    datetime_str = "2021-12-01T00:00:00Z"
-    # Parse the datetime string into a datetime object
-    datetime_obj = datetime.strptime(datetime_str, "%Y-%m-%dT%H:%M:%SZ")
-    # Convert the datetime object to a Unix timestamp (float)
-    unix_timestamp = datetime_obj.replace(tzinfo=timezone.utc).timestamp()
-    
+# Define the datetime string
+datetime_str = "2021-12-01T00:00:00Z"
+# Parse the datetime string into a datetime object
+datetime_obj = datetime.strptime(datetime_str, "%Y-%m-%dT%H:%M:%SZ")
+# Convert the datetime object to a Unix timestamp (float)
+unix_timestamp = datetime_obj.replace(tzinfo=timezone.utc).timestamp()
+
+@pytest.mark.parametrize("unix_timestamp", [unix_timestamp]) # Allows us to define a single test with multiple potential inputs
+def test_comments(unix_timestamp):
     # Create an instance of Comments
     dashboard = Comments(
         created_at=unix_timestamp,
@@ -31,14 +32,8 @@ def test_comments():
     # Assert that the created_at field is correctly converted and formatted
     assert expected_created_at_str == datetime_str
 
-def test_comments_default_values():
-    # Define the datetime string
-    datetime_str = "2021-12-01T00:00:00Z"
-    # Parse the datetime string into a datetime object
-    datetime_obj = datetime.strptime(datetime_str, "%Y-%m-%dT%H:%M:%SZ")
-    # Convert the datetime object to a Unix timestamp (float)
-    unix_timestamp = datetime_obj.replace(tzinfo=timezone.utc).timestamp()
-    
+@pytest.mark.parametrize("unix_timestamp", [unix_timestamp])
+def test_comments_default_values(unix_timestamp):
     # Create an instance of Comments without optional fields
     dashboard = Comments(title="Test Dashboard", created_at=unix_timestamp)
 
@@ -57,6 +52,9 @@ def test_comments_name_max_length():
     
     # Create an instance of Comments with a name exceeding max_length
     long_name = "A" * 300
+    # Validate the id
+    with pytest.raises(ValueError):
+        Comments.model_validate({"id": long_name})
     # Validate the title
     with pytest.raises(ValueError):
         Comments.model_validate({"title": long_name})
@@ -76,4 +74,5 @@ if __name__ == "__main__":
     
 # References:
 # - https://github.com/fastapi/sqlmodel/issues/52
+# - https://www.datacamp.com/tutorial/pytest-tutorial-a-hands-on-guide-to-unit-testing
     

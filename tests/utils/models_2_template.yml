@@ -1,4 +1,4 @@
-models: [
+models: [ # List of models for autogenerating unit test templates
     'AWSDashboard',
     'Access',
     'AccreditationCertificate',
