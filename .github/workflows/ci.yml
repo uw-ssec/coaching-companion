@@ -74,6 +74,7 @@ jobs:
       
       - name: Test with pytest
         run: |
+          pip install pytest pytest-cov
           pytest -vvv --cov=${{ env.PROJECT_NAME }} --cov-report=xml --cov-report=term tests/
 
       - name: Upload coverage reports to Codecov with GitHub Action
