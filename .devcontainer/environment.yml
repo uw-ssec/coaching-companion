@@ -5,8 +5,14 @@ dependencies:
   - python>=3.12
   - pip
   - django
-  - mysql-connector-python 
-  - psycopg2-binary
+  - ibis-framework
+  - flake8
+  - hatch
   - nox
   - pre-commit
-  - graphviz
+  - psycopg2-binary
+  - pydantic
+  - pytest
+  - sqlalchemy
+  - sqlmodel
+  - nodejs
