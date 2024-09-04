@@ -9,6 +9,12 @@ datetime_obj = datetime.strptime(datetime_str, "%Y-%m-%dT%H:%M:%SZ")
 # Convert the datetime object to a Unix timestamp (float)
 unix_timestamp = datetime_obj.replace(tzinfo=timezone.utc).timestamp()
 
+# Define the url string
+url_str = "https://s3-us-west-2.amazonaws.com/test-bucket/test-key"
+
+# Define the UUID string
+uuid_int = 12345678901234567890
+
 @pytest.mark.parametrize("unix_timestamp", [unix_timestamp]) # Allows us to define a single test with multiple potential inputs
 def test_item(unix_timestamp):
     # Create an instance of Item
@@ -43,15 +49,9 @@ def test_item_default_values(unix_timestamp):
     assert isinstance(dashboard.created_at, float)
 
 def test_item_name_max_length():
-    # Define the datetime string
-    datetime_str = "2021-12-01T00:00:00Z"
-    # Parse the datetime string into a datetime object
-    datetime_obj = datetime.strptime(datetime_str, "%Y-%m-%dT%H:%M:%SZ")
-    # Convert the datetime object to a Unix timestamp (float)
-    unix_timestamp = datetime_obj.replace(tzinfo=timezone.utc).timestamp()
-    
     # Create an instance of Item with a name exceeding max_length
-    long_name = "A" * 300
+    long_name = "A" * 300 # For testing non-text type fields
+    long_num = 12345678901234567890 # For testing text type fields
     # Validate the id
     with pytest.raises(ValueError):
         Item.model_validate({"id": long_name})

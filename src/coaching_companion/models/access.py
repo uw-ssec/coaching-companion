@@ -1,8 +1,7 @@
 from ._basetablemodel import BaseTableModel, convert_str_to_url
 
-from sqlmodel import Field, String, Integer
+from sqlmodel import Field, String, Integer, Text
 from pydantic import field_validator
-from sqlalchemy import Text
 
 class Access(BaseTableModel, table=True):
     __tablename__ = "access"

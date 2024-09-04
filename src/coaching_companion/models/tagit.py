@@ -8,6 +8,6 @@ class Tagit(BaseTableModel, table=True):
     __tablename__ = "tagit"
     __table_args__ = {"schema": "public"}
 
-    timestamp: datetime = Field(default=None, sa_column_kwargs={"nullable": True})
+    timestamp: datetime = Field(default=None, nullable=False)
 
     _timestamp = field_validator('timestamp')(convert_timestamp_to_datetime)

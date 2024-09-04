@@ -1,7 +1,7 @@
 from ._basetablemodel import BaseTableModel
 
-class ManageAuthUsers(BaseTableModel, table=True):
-    __tablename__ = "manage_auth_users"
+class UserLogProperties(BaseTableModel, table=True):
+    __tablename__ = "user_log_properties"
     __table_args__ = {"schema": "public"}
     
     pass
