@@ -38,15 +38,14 @@ def test_note(unix_timestamp):
     # Assert that the created_at field is correctly converted and formatted
     assert expected_created_at_str == datetime_str
 
-@pytest.mark.parametrize("unix_timestamp", [unix_timestamp])
-def test_note_default_values(unix_timestamp):
+def test_note_default_values():
     # Create an instance of Note without optional fields
-    dashboard = Note(title="Test Dashboard", created_at=unix_timestamp)
+    dashboard = Note(title="Test Dashboard")
 
     # Assert that the default values are correctly set
     assert dashboard.id is None
     assert dashboard.created_by is None
-    assert isinstance(dashboard.created_at, float)
+    assert dashboard.created_at is None
 
 def test_note_name_max_length():
     # Create an instance of Note with a name exceeding max_length

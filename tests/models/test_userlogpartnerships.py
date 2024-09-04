@@ -1,6 +1,6 @@
 import pytest
 from datetime import datetime, timezone
-from coaching_companion.models import AuthUsersLogSharedGoals
+from coaching_companion.models import UserLogPartnerships
 
 # Define the datetime string
 datetime_str = "2021-12-01T00:00:00Z"
@@ -16,19 +16,19 @@ url_str = "https://s3-us-west-2.amazonaws.com/test-bucket/test-key"
 uuid_int = 12345678901234567890
 
 @pytest.mark.parametrize("unix_timestamp", [unix_timestamp]) # Allows us to define a single test with multiple potential inputs
-def test_authuserslogsharedgoals(unix_timestamp):
-    # Create an instance of AuthUsersLogSharedGoals
-    dashboard = AuthUsersLogSharedGoals(
+def test_userlogpartnerships(unix_timestamp):
+    # Create an instance of UserLogPartnerships
+    dashboard = UserLogPartnerships(
         created_at=unix_timestamp,
         created_by=int(12345678901234567890),
-        title="Test AuthUsersLogSharedGoals Title",
-        type_="authuserslogsharedgoals"
+        title="Test UserLogPartnerships Title",
+        type_="userlogpartnerships"
     )
 
     # Assert that the fields are correctly set
     assert dashboard.created_by == int(12345678901234567890)
-    assert dashboard.title == "Test AuthUsersLogSharedGoals Title"
-    assert dashboard.type_ == "authuserslogsharedgoals"
+    assert dashboard.title == "Test UserLogPartnerships Title"
+    assert dashboard.type_ == "userlogpartnerships"
 
     # Convert the Unix timestamp to a UTC datetime object
     expected_created_at = datetime.fromtimestamp(unix_timestamp, tz=timezone.utc)
@@ -38,35 +38,34 @@ def test_authuserslogsharedgoals(unix_timestamp):
     # Assert that the created_at field is correctly converted and formatted
     assert expected_created_at_str == datetime_str
 
-@pytest.mark.parametrize("unix_timestamp", [unix_timestamp])
-def test_authuserslogsharedgoals_default_values(unix_timestamp):
-    # Create an instance of AuthUsersLogSharedGoals without optional fields
-    dashboard = AuthUsersLogSharedGoals(title="Test Dashboard", created_at=unix_timestamp)
+def test_userlogpartnerships_default_values():
+    # Create an instance of UserLogPartnerships without optional fields
+    dashboard = UserLogPartnerships(title="Test Dashboard")
 
     # Assert that the default values are correctly set
     assert dashboard.id is None
     assert dashboard.created_by is None
-    assert isinstance(dashboard.created_at, float)
+    assert dashboard.created_at is None
 
-def test_authuserslogsharedgoals_name_max_length():
-    # Create an instance of AuthUsersLogSharedGoals with a name exceeding max_length
+def test_userlogpartnerships_name_max_length():
+    # Create an instance of UserLogPartnerships with a name exceeding max_length
     long_name = "A" * 300 # For testing non-text type fields
     long_num = 12345678901234567890 # For testing text type fields
     # Validate the id
     with pytest.raises(ValueError):
-        AuthUsersLogSharedGoals.model_validate({"id": long_name})
+        UserLogPartnerships.model_validate({"id": long_name})
     # Validate the title
     with pytest.raises(ValueError):
-        AuthUsersLogSharedGoals.model_validate({"title": long_name})
+        UserLogPartnerships.model_validate({"title": long_name})
     # Validate the created_by
     with pytest.raises(ValueError):
-        AuthUsersLogSharedGoals.model_validate({"created_by": long_name})
+        UserLogPartnerships.model_validate({"created_by": long_name})
     # Validate the created_at
     with pytest.raises(ValueError):
-        AuthUsersLogSharedGoals.model_validate({"created_at": long_name})
+        UserLogPartnerships.model_validate({"created_at": long_name})
     # Validate the type_
     with pytest.raises(ValueError):
-        AuthUsersLogSharedGoals.model_validate({"type_": long_name})
+        UserLogPartnerships.model_validate({"type_": long_name})
 
 # Run the tests
 if __name__ == "__main__":

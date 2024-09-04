@@ -38,15 +38,14 @@ def test_resourcelibrary(unix_timestamp):
     # Assert that the created_at field is correctly converted and formatted
     assert expected_created_at_str == datetime_str
 
-@pytest.mark.parametrize("unix_timestamp", [unix_timestamp])
-def test_resourcelibrary_default_values(unix_timestamp):
+def test_resourcelibrary_default_values():
     # Create an instance of ResourceLibrary without optional fields
-    dashboard = ResourceLibrary(title="Test Dashboard", created_at=unix_timestamp)
+    dashboard = ResourceLibrary(title="Test Dashboard")
 
     # Assert that the default values are correctly set
     assert dashboard.id is None
     assert dashboard.created_by is None
-    assert isinstance(dashboard.created_at, float)
+    assert dashboard.created_at is None
 
 def test_resourcelibrary_name_max_length():
     # Create an instance of ResourceLibrary with a name exceeding max_length

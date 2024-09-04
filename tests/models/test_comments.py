@@ -38,15 +38,14 @@ def test_comments(unix_timestamp):
     # Assert that the created_at field is correctly converted and formatted
     assert expected_created_at_str == datetime_str
 
-@pytest.mark.parametrize("unix_timestamp", [unix_timestamp])
-def test_comments_default_values(unix_timestamp):
+def test_comments_default_values():
     # Create an instance of Comments without optional fields
-    dashboard = Comments(title="Test Dashboard", created_at=unix_timestamp)
+    dashboard = Comments(title="Test Dashboard")
 
     # Assert that the default values are correctly set
     assert dashboard.id is None
     assert dashboard.created_by is None
-    assert isinstance(dashboard.created_at, float)
+    assert dashboard.created_at is None
 
 def test_comments_name_max_length():
     # Create an instance of Comments with a name exceeding max_length

@@ -38,15 +38,14 @@ def test_manageusers(unix_timestamp):
     # Assert that the created_at field is correctly converted and formatted
     assert expected_created_at_str == datetime_str
 
-@pytest.mark.parametrize("unix_timestamp", [unix_timestamp])
-def test_manageusers_default_values(unix_timestamp):
+def test_manageusers_default_values():
     # Create an instance of ManageUsers without optional fields
-    dashboard = ManageUsers(title="Test Dashboard", created_at=unix_timestamp)
+    dashboard = ManageUsers(title="Test Dashboard")
 
     # Assert that the default values are correctly set
     assert dashboard.id is None
     assert dashboard.created_by is None
-    assert isinstance(dashboard.created_at, float)
+    assert dashboard.created_at is None
 
 def test_manageusers_name_max_length():
     # Create an instance of ManageUsers with a name exceeding max_length

@@ -1,6 +1,6 @@
 import pytest
 from datetime import datetime, timezone
-from coaching_companion.models import AuthUsersLogAllAttributes
+from coaching_companion.models import BaseTableModel
 
 # Define the datetime string
 datetime_str = "2021-12-01T00:00:00Z"
@@ -16,19 +16,19 @@ url_str = "https://s3-us-west-2.amazonaws.com/test-bucket/test-key"
 uuid_int = 12345678901234567890
 
 @pytest.mark.parametrize("unix_timestamp", [unix_timestamp]) # Allows us to define a single test with multiple potential inputs
-def test_authuserslogallattributes(unix_timestamp):
-    # Create an instance of AuthUsersLogAllAttributes
-    dashboard = AuthUsersLogAllAttributes(
+def test_basetablemodel(unix_timestamp):
+    # Create an instance of BaseTableModel
+    dashboard = BaseTableModel(
         created_at=unix_timestamp,
         created_by=int(12345678901234567890),
-        title="Test AuthUsersLogAllAttributes Title",
-        type_="authuserslogallattributes"
+        title="Test BaseTableModel Title",
+        type_="basetablemodel"
     )
 
     # Assert that the fields are correctly set
     assert dashboard.created_by == int(12345678901234567890)
-    assert dashboard.title == "Test AuthUsersLogAllAttributes Title"
-    assert dashboard.type_ == "authuserslogallattributes"
+    assert dashboard.title == "Test BaseTableModel Title"
+    assert dashboard.type_ == "basetablemodel"
 
     # Convert the Unix timestamp to a UTC datetime object
     expected_created_at = datetime.fromtimestamp(unix_timestamp, tz=timezone.utc)
@@ -38,35 +38,34 @@ def test_authuserslogallattributes(unix_timestamp):
     # Assert that the created_at field is correctly converted and formatted
     assert expected_created_at_str == datetime_str
 
-@pytest.mark.parametrize("unix_timestamp", [unix_timestamp])
-def test_authuserslogallattributes_default_values(unix_timestamp):
-    # Create an instance of AuthUsersLogAllAttributes without optional fields
-    dashboard = AuthUsersLogAllAttributes(title="Test Dashboard", created_at=unix_timestamp)
+def test_basetablemodel_default_values():
+    # Create an instance of BaseTableModel without optional fields
+    dashboard = BaseTableModel(title="Test Dashboard")
 
     # Assert that the default values are correctly set
     assert dashboard.id is None
     assert dashboard.created_by is None
-    assert isinstance(dashboard.created_at, float)
+    assert dashboard.created_at is None
 
-def test_authuserslogallattributes_name_max_length():
-    # Create an instance of AuthUsersLogAllAttributes with a name exceeding max_length
+def test_basetablemodel_name_max_length():
+    # Create an instance of BaseTableModel with a name exceeding max_length
     long_name = "A" * 300 # For testing non-text type fields
     long_num = 12345678901234567890 # For testing text type fields
     # Validate the id
     with pytest.raises(ValueError):
-        AuthUsersLogAllAttributes.model_validate({"id": long_name})
+        BaseTableModel.model_validate({"id": long_name})
     # Validate the title
     with pytest.raises(ValueError):
-        AuthUsersLogAllAttributes.model_validate({"title": long_name})
+        BaseTableModel.model_validate({"title": long_name})
     # Validate the created_by
     with pytest.raises(ValueError):
-        AuthUsersLogAllAttributes.model_validate({"created_by": long_name})
+        BaseTableModel.model_validate({"created_by": long_name})
     # Validate the created_at
     with pytest.raises(ValueError):
-        AuthUsersLogAllAttributes.model_validate({"created_at": long_name})
+        BaseTableModel.model_validate({"created_at": long_name})
     # Validate the type_
     with pytest.raises(ValueError):
-        AuthUsersLogAllAttributes.model_validate({"type_": long_name})
+        BaseTableModel.model_validate({"type_": long_name})
 
 # Run the tests
 if __name__ == "__main__":

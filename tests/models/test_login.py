@@ -38,15 +38,14 @@ def test_login(unix_timestamp):
     # Assert that the created_at field is correctly converted and formatted
     assert expected_created_at_str == datetime_str
 
-@pytest.mark.parametrize("unix_timestamp", [unix_timestamp])
-def test_login_default_values(unix_timestamp):
+def test_login_default_values():
     # Create an instance of Login without optional fields
-    dashboard = Login(title="Test Dashboard", created_at=unix_timestamp)
+    dashboard = Login(title="Test Dashboard")
 
     # Assert that the default values are correctly set
     assert dashboard.id is None
     assert dashboard.created_by is None
-    assert isinstance(dashboard.created_at, float)
+    assert dashboard.created_at is None
 
 def test_login_name_max_length():
     # Create an instance of Login with a name exceeding max_length
