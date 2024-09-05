@@ -1,7 +1,6 @@
 from ._basetablemodel import BaseTableModel
 
-from sqlmodel import Field
-from sqlalchemy import Text
+from sqlmodel import Field, Text
 
 class Note(BaseTableModel, table=True):
     __tablename__ = "note"

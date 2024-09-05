@@ -53,7 +53,7 @@ models: [ # List of models for autogenerating unit test templates
     'ManageRecipes',
     'ManageSite',
     'ManageStudents',
-    'ManageAuthUsers',
+    'ManageUsers',
     'Media',
     'MediaDatabase',
     'MeritEndpoint',

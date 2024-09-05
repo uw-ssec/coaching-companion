@@ -54,7 +54,7 @@ from .managemenus import ManageMenus
 from .managerecipes import ManageRecipes
 from .managesite import ManageSite
 from .managestudents import ManageStudents
-from .manageauthusers import ManageAuthUsers
+from .manageusers import ManageUsers
 from .media import Media
 from .mediadatabase import MediaDatabase
 from .meritendpoint import MeritEndpoint
@@ -80,18 +80,18 @@ from .tracker import Tracker
 from .unassignedassets import UnassignedAssets
 from .uploadandreflectionassignment import UploadAndReflectionAssignment
 from .userinvitations import UserInvitations
-from .authusersettings import AuthUserSettings
-from .authusersubmissions import AuthUserSubmissions
-from .authuserslogallattributes import AuthUsersLogAllAttributes
-from .authuserslogcompletedgoals import AuthUsersLogCompletedGoals
-from .authuserslogcopgroups import AuthUsersLogCopGroups
-from .authuserslogcopgroupsdigest import AuthUsersLogCopGroupsDigest
-from .authuserslogcreatedat import AuthUsersLogCreatedAt
-from .authuserslogpartnerships import AuthUsersLogPartnerships
-from .authuserslogproperties import AuthUsersLogProperties
-from .authuserslogreporting import AuthUsersLogReporting
-from .authuserslogsharedgoals import AuthUsersLogSharedGoals
-from .authusersloguploads import AuthUsersLogUploads
+from .usersettings import UserSettings
+from .usersubmissions import UserSubmissions
+from .userslogallattributes import UserLogAllAttributes
+from .userslogcompletedgoals import UserLogCompletedGoals
+from .userslogcopgroups import UserLogCopGroups
+from .userlogcopgroupsdigest import UserLogCopGroupsDigest
+from .userlogcreatedat import UserLogCreatedAt
+from .userlogpartnerships import UserLogPartnerships
+from .userlogproperties import UserLogProperties
+from .userlogreporting import UserLogReporting
+from .userlogsharedgoals import UserLogSharedGoals
+from .userloguploads import UserLogUploads
 from .videoconference import VideoConference
 from .videohighlightsubmission import VideoHighlightSubmission
 from .videoreflection import VideoReflection
@@ -153,7 +153,7 @@ __all__ = [
     'ManageRecipes',
     'ManageSite',
     'ManageStudents',
-    'ManageAuthUsers',
+    'ManageUsers',
     'Media',
     'MediaDatabase',
     'MeritEndpoint',
@@ -179,18 +179,18 @@ __all__ = [
     'UnassignedAssets',
     'UploadAndReflectionAssignment',
     'UserInvitations',
-    'AuthUserSettings',
-    'AuthUserSubmissions',
-    'AuthUsersLogAllAttributes',
-    'AuthUsersLogCompletedGoals',
-    'AuthUsersLogCopGroups',
-    'AuthUsersLogCopGroupsDigest',
-    'AuthUsersLogCreatedAt',
-    'AuthUsersLogPartnerships',
-    'AuthUsersLogProperties',
-    'AuthUsersLogReporting',
-    'AuthUsersLogSharedGoals',
-    'AuthUsersLogUploads',
+    'UserSettings',
+    'UserSubmissions',
+    'UserLogAllAttributes',
+    'UserLogCompletedGoals',
+    'UserLogCopGroups',
+    'UserLogCopGroupsDigest',
+    'UserLogCreatedAt',
+    'UserLogPartnerships',
+    'UserLogProperties',
+    'UserLogReporting',
+    'UserLogSharedGoals',
+    'UserLogUploads',
     'VideoConference',
     'VideoHighlightSubmission',
     'VideoReflection'

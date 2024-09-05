@@ -1,0 +1,860 @@
+Table "auth_group" {
+  "id" int4 [pk, not null, increment]
+  "name" varchar(150) [unique, not null]
+
+  Indexes {
+    name [type: btree, name: "auth_group_name_a6ea08ec_like"]
+  }
+}
+
+Table "auth_group_permissions" {
+  "id" int8 [pk, not null, increment]
+  "group_id" int4 [not null]
+  "permission_id" int4 [not null]
+
+  Indexes {
+    (group_id, permission_id) [type: btree, name: "auth_group_permissions_group_id_permission_id_0cd325b0_uniq"]
+    group_id [type: btree, name: "auth_group_permissions_group_id_b120cbf9"]
+    permission_id [type: btree, name: "auth_group_permissions_permission_id_84c5c92e"]
+  }
+}
+
+Table "auth_permission" {
+  "id" int4 [pk, not null, increment]
+  "name" varchar(255) [not null]
+  "content_type_id" int4 [not null]
+  "codename" varchar(100) [not null]
+
+  Indexes {
+    (content_type_id, codename) [type: btree, name: "auth_permission_content_type_id_codename_01ab375a_uniq"]
+    content_type_id [type: btree, name: "auth_permission_content_type_id_2f476e4b"]
+  }
+}
+
+Table "auth_user" {
+  "id" int8 [pk, not null, increment]
+  "password" varchar(128) [not null]
+  "last_login" timestamptz
+  "is_superuser" bool [not null]
+  "username" varchar(255) [unique]
+  "email" varchar(255) [unique]
+  "is_verified" bool [not null]
+  "is_active" bool [not null]
+  "is_staff" bool [not null]
+  "created_at" timestamptz [not null]
+  "updated_at" timestamptz [not null]
+  "first_name" varchar(255)
+  "nestor_user_id" int4
+  "last_name" varchar(255)
+
+  Indexes {
+    first_name [type: btree, name: "auth_user_first_name_fdcd781b"]
+    last_name [type: btree, name: "auth_user_last_name_e48cdaa9"]
+  }
+}
+
+Table "auth_user_groups" {
+  "id" int8 [pk, not null, increment]
+  "user_id" int8 [not null]
+  "group_id" int4 [not null]
+
+  Indexes {
+    (user_id, group_id) [type: btree, name: "auth_user_groups_user_id_group_id_94350c0c_uniq"]
+    group_id [type: btree, name: "auth_user_groups_group_id_97559544"]
+    user_id [type: btree, name: "auth_user_groups_user_id_6a12ed8b"]
+  }
+}
+
+Table "auth_user_user_permissions" {
+  "id" int8 [pk, not null, increment]
+  "user_id" int8 [not null]
+  "permission_id" int4 [not null]
+
+  Indexes {
+    (user_id, permission_id) [type: btree, name: "auth_user_user_permissions_user_id_permission_id_14a6b632_uniq"]
+    permission_id [type: btree, name: "auth_user_user_permissions_permission_id_1fbb5f2c"]
+    user_id [type: btree, name: "auth_user_user_permissions_user_id_a95ead1b"]
+  }
+}
+
+Table "authentication_methods" {
+  "id" int4 [pk, not null, increment]
+  "created" timestamp [default: `now()`]
+  "edited" timestamp [default: `now()`]
+  "name" varchar(64) [unique]
+  "organizations_id" int4
+  "authentication_types_id" int4
+  "endpoint_url" varchar(32)
+}
+
+Table "authentication_types" {
+  "id" int4 [pk, not null, increment]
+  "created" timestamp [default: `now()`]
+  "edited" timestamp [default: `now()`]
+  "name" varchar(64)
+}
+
+Table "django_admin_log" {
+  "id" int4 [pk, not null, increment]
+  "action_time" timestamptz [not null]
+  "object_id" text
+  "object_repr" varchar(200) [not null]
+  "action_flag" int2 [not null]
+  "change_message" text [not null]
+  "content_type_id" int4
+  "user_id" int8 [not null]
+
+  Indexes {
+    content_type_id [type: btree, name: "django_admin_log_content_type_id_c4bce8eb"]
+    user_id [type: btree, name: "django_admin_log_user_id_c564eba6"]
+  }
+}
+
+Table "django_content_type" {
+  "id" int4 [pk, not null, increment]
+  "app_label" varchar(100) [not null]
+  "model" varchar(100) [not null]
+
+  Indexes {
+    (app_label, model) [type: btree, name: "django_content_type_app_label_model_76bd3d3b_uniq"]
+  }
+}
+
+Table "django_migrations" {
+  "id" int8 [pk, not null, increment]
+  "app" varchar(255) [not null]
+  "name" varchar(255) [not null]
+  "applied" timestamptz [not null]
+}
+
+Table "django_session" {
+  "session_key" varchar(40) [pk, not null]
+  "session_data" text [not null]
+  "expire_date" timestamptz [not null]
+
+  Indexes {
+    expire_date [type: btree, name: "django_session_expire_date_a5c62663"]
+    session_key [type: btree, name: "django_session_session_key_c0390e0f_like"]
+  }
+}
+
+Table "django_site" {
+  "id" int4 [pk, not null, increment]
+  "domain" varchar(100) [unique, not null]
+  "name" varchar(50) [not null]
+
+  Indexes {
+    domain [type: btree, name: "django_site_domain_a2e37b91_like"]
+  }
+}
+
+Table "dra_crud_permissions" {
+  "id" int4 [pk, not null, increment]
+  "name" varchar(40)
+}
+
+Table "dra_j_cecu_roles_to_org_uids" {
+  "id" int4 [pk, not null, increment]
+  "created" timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  "edited" timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  "dra_ceci_roles_id" int4
+  "dra_org_uids_id" int4
+}
+
+Table "dra_j_org_subdivisions_to_org_uids" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "dra_org_subdivision_id" int4
+  "dra_org_uids_id" int4
+}
+
+Table "dra_j_org_uids_to_temp_emails" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "dra_org_uids_id" int4
+  "dra_temp_emails_id" int4
+}
+
+Table "dra_j_org_uids_to_temp_users" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "dra_org_uids_id" int4
+  "dra_temp_users_id" int4
+}
+
+Table "dra_j_org_usernames_to_org_uids" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "dra_org_usernames_id" int4
+  "dra_org_uids_id" int4
+}
+
+Table "dra_j_temp_users_to_temp_subgroups" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "dra_temp_users_id" int4
+  "dra_temp_subgroups_id" int4
+}
+
+Table "dra_j_temp_users_to_temp_user_attributes" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "dra_temp_users_id" int4
+  "dra_temp_user_attributes_id" int4
+}
+
+Table "dra_j_to_temp_content_to_org_uids_to_ceci_roles_to_temp_subgrou" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "dra_temp_content_id" int4
+  "dra_org_uids_id" int4
+  "dra_ceci_roles_id" int4
+  "dra_temp_subgroups_id" int4
+}
+
+Table "dra_j_uids_to_org_subdivisions_to_users" {
+  "id" int4 [pk, not null, increment]
+  "created" timestamp [default: `CURRENT_TIMESTAMP`]
+  "edited" timestamp [default: `CURRENT_TIMESTAMP`]
+  "dra_uids_id" int4
+  "dra_org_subdivisions_id" int4
+  "dra_auth_users_id" int4
+}
+
+Table "dra_j_uids_to_orgs_to_users" {
+  "id" int4 [pk, not null, increment]
+  "created" timestamp [default: `CURRENT_TIMESTAMP`]
+  "edited" timestamp [default: `CURRENT_TIMESTAMP`]
+  "dra_uids_id" int4
+  "dra_organizations_id" int4
+  "dra_auth_users_id" int4
+}
+
+Table "dra_j_users_to_roles" {
+  "id" int4 [pk, not null, increment]
+  "dra_auth_users_id" int4
+  "dra_ceci_roles_id" int4
+}
+
+Table "dra_org_subdivisions" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "name" varchar(40)
+  "dra_organizations_id" int4
+}
+
+Table "dra_org_usernames" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "name" varchar(40)
+  "dra_org_uids_id" int4
+}
+
+Table "dra_organizations" {
+  "id" int4 [pk, not null, increment]
+  "created" timestamp
+  "edited" timestamp
+  "name" varchar(40)
+}
+
+Table "dra_organizations_roles" {
+  "id" int4 [pk, not null, increment]
+  "created" timestamp [default: `now()`]
+  "edited" timestamp [default: `now()`]
+  "name" varchar(64)
+  "organizations_id" int4
+  "notes" varchar(255)
+}
+
+Table "dra_roles" {
+  "id" int4 [pk, not null, increment]
+  "created" timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  "edited" timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  "name" varchar(40)
+}
+
+Table "dra_temp_access_control_rules" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "name" varchar(40)
+  "value" varchar(100)
+}
+
+Table "dra_temp_content" {
+  "id" int4 [pk, not null, increment]
+  "created" timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  "edited" timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  "org_uids_id" int4
+  "page_id" int4
+  "component_id" int4
+  "key" varchar(40)
+  "value" varchar(100)
+}
+
+Table "dra_temp_emails" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "email" varchar(30)
+}
+
+Table "dra_temp_groups" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "name" varchar(40)
+}
+
+Table "dra_temp_subgroups" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "name" varchar(40)
+  "temp_groups_id" int4
+}
+
+Table "dra_temp_user_attributes" {
+  "id" int4 [pk, not null]
+  "user_id" int4
+  "created" timestamp
+  "edited" timestamp
+  "name" varchar(40)
+  "value" varchar(100)
+}
+
+Table "dra_temp_users" {
+  "id" int4 [pk, not null, increment]
+  "created" timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  "edited" timestamp [not null, default: `CURRENT_TIMESTAMP`]
+  "username" varchar(20)
+  "first_name" varchar(20)
+  "last_name" varchar(35)
+  "pronouns" varchar(25)
+}
+
+Table "dra_uids" {
+  "id" int4 [pk, not null]
+  "created" timestamp
+  "edited" timestamp
+  "name" varchar(40)
+  "uid" varchar(40)
+  "dra_auth_systems_id" int4
+}
+
+Table "ea_access_permissions" {
+  "id" int4 [pk, not null, increment]
+  "idsite" varchar(16)
+  "cycleid" varchar(16)
+  "view_program_profile_report" varchar(4)
+  "view_quic_report" varchar(4)
+  "view_video_submission" varchar(4)
+  "view_records_review_report" varchar(4)
+  "view_accreditation_report" varchar(4)
+}
+
+Table "j_auth_user_x_user_uids" {
+  "id" int4 [pk, not null, increment]
+  "created" timestamp [default: `now()`]
+  "edited" timestamp [default: `now()`]
+  "auth_user_id" int4
+  "user_uids_id" int4
+}
+
+Table "lti1p3_tool" {
+  "id" int8 [pk, not null, increment]
+  "title" varchar(255) [not null]
+  "is_active" bool [not null]
+  "issuer" varchar(255) [not null]
+  "client_id" varchar(255) [not null]
+  "use_by_default" bool [not null]
+  "auth_login_url" varchar(1024) [not null]
+  "auth_token_url" varchar(1024) [not null]
+  "auth_audience" varchar(1024)
+  "key_set_url" varchar(1024)
+  "key_set" text
+  "deployment_ids" text [not null]
+  "tool_key_id" int8 [not null]
+
+  Indexes {
+    (issuer, client_id) [type: btree, name: "lti1p3_tool_issuer_client_id_b3116be4_uniq"]
+    tool_key_id [type: btree, name: "lti1p3_tool_tool_key_id_608be89f"]
+  }
+}
+
+Table "lti1p3_tool_key" {
+  "id" int8 [pk, not null, increment]
+  "name" varchar(255) [unique, not null]
+  "private_key" text [not null]
+  "public_key" text
+  "public_jwk" text
+
+  Indexes {
+    name [type: btree, name: "lti1p3_tool_key_name_f0dabf87_like"]
+  }
+}
+
+Table "oauth_data" {
+  "id" int8 [not null, increment]
+  "access_token" text [not null]
+  "client_id" text [not null]
+  "user_id" text [not null]
+  "expires" int4 [not null]
+  "scope" text [not null]
+  "id_token" text [not null]
+}
+
+Table "organizations" {
+  "id" int8 [pk, not null, increment]
+  "created" timestamptz
+  "edited" timestamptz
+  "name" text
+}
+
+Table "projects_project" {
+  "id" int8 [pk, not null, increment]
+  "title" varchar(100) [not null]
+  "description" text [not null]
+  "technology" varchar(20) [not null]
+  "image" varchar(100) [not null]
+}
+
+Table "token_blacklist_blacklistedtoken" {
+  "id" int8 [pk, not null, increment]
+  "blacklisted_at" timestamptz [not null]
+  "token_id" int8 [unique, not null]
+}
+
+Table "token_blacklist_outstandingtoken" {
+  "id" int8 [pk, not null, increment]
+  "token" text [not null]
+  "created_at" timestamptz
+  "expires_at" timestamptz [not null]
+  "user_id" int8
+  "jti" varchar(255) [unique, not null]
+
+  Indexes {
+    jti [type: btree, name: "token_blacklist_outstandingtoken_jti_hex_d9bdf6f7_like"]
+    user_id [type: btree, name: "token_blacklist_outstandingtoken_user_id_83bc629a"]
+  }
+}
+
+Table "user_uids" {
+  "id" int4 [pk, not null, increment]
+  "created" timestamp [default: `now()`]
+  "edited" timestamp [default: `now()`]
+  "name" varchar(64)
+  "organizations_id" int4
+  "authentication_methods_id" int4
+}
+
+Table "vce_analytics" {
+  "id" int8 [pk, not null, increment]
+  "timestamp" timestamptz [not null, default: `CURRENT_TIMESTAMP`]
+  "user_id" int8 [not null]
+  "session" int8 [not null]
+  "component_id" int8 [not null]
+  "action" varchar(255) [not null]
+  "object" text [not null]
+
+  Indexes {
+    action [type: btree, name: "idx_67538_action"]
+    component_id [type: btree, name: "idx_67538_component_id"]
+    session [type: btree, name: "idx_67538_session"]
+    user_id [type: btree, name: "idx_67538_user_id"]
+  }
+}
+
+Table "vce_components" {
+  "component_id" int8 [pk, not null, increment]
+  "parent_id" int8 [not null, default: '0']
+  "sequence" int8 [not null, default: '0']
+  "url" varchar(255) [not null]
+
+  Indexes {
+    component_id [type: btree, name: "idx_67546_component_id"]
+    parent_id [type: btree, name: "idx_67546_parent_id"]
+  }
+}
+
+Table "vce_components_meta" {
+  "id" int8 [pk, not null, increment]
+  "component_id" int8 [not null]
+  "meta_key" varchar(255) [not null]
+  "meta_value" text [not null]
+  "minutia" varchar(255) [not null]
+
+  Indexes {
+    component_id [type: btree, name: "idx_67553_component_id"]
+    meta_key [type: btree, name: "idx_67553_meta_key"]
+  }
+}
+
+Table "vce_datalists" {
+  "datalist_id" int8 [pk, not null, increment]
+  "parent_id" int8 [not null, default: '0']
+  "item_id" int8 [not null, default: '0']
+  "component_id" int8 [not null, default: '0']
+  "user_id" int8 [not null, default: '0']
+  "sequence" int8 [not null, default: '0']
+
+  Indexes {
+    component_id [type: btree, name: "idx_67560_component_id"]
+    datalist_id [type: btree, name: "idx_67560_datalist_id"]
+    item_id [type: btree, name: "idx_67560_item_id"]
+    parent_id [type: btree, name: "idx_67560_parent_id"]
+    user_id [type: btree, name: "idx_67560_user_id"]
+  }
+}
+
+Table "vce_datalists_items" {
+  "item_id" int8 [pk, not null, increment]
+  "datalist_id" int8 [not null]
+  "sequence" int8 [not null, default: '0']
+
+  Indexes {
+    datalist_id [type: btree, name: "idx_67570_datalist_id"]
+    item_id [type: btree, name: "idx_67570_item_id"]
+  }
+}
+
+Table "vce_datalists_items_meta" {
+  "id" int8 [pk, not null, increment]
+  "item_id" int8 [not null]
+  "meta_key" varchar(255) [not null]
+  "meta_value" text [not null]
+  "minutia" varchar(255) [not null]
+
+  Indexes {
+    item_id [type: btree, name: "idx_67576_item_id"]
+    meta_key [type: btree, name: "idx_67576_meta_key"]
+  }
+}
+
+Table "vce_datalists_meta" {
+  "id" int8 [pk, not null, increment]
+  "datalist_id" int8 [not null]
+  "meta_key" varchar(255) [not null]
+  "meta_value" text [not null]
+  "minutia" varchar(255) [not null]
+
+  Indexes {
+    datalist_id [type: btree, name: "idx_67583_datalist_id"]
+    meta_key [type: btree, name: "idx_67583_meta_key"]
+  }
+}
+
+Table "vce_datatype_lookup" {
+  "id" int4 [pk, not null, increment]
+  "type" varchar [unique, not null]
+  "datatype" varchar
+}
+
+Table "vce_merit_connect" {
+  "id" int8 [pk, not null, increment]
+  "timestamp" timestamptz [not null, default: `CURRENT_TIMESTAMP`]
+  "rating_id" int8 [not null]
+  "data" text [not null]
+  "status" varchar(50) [not null]
+  "message" varchar(100) [not null]
+}
+
+Table "vce_merit_endpoint" {
+  "id" int8 [pk, not null, increment]
+  "timestamp" timestamptz [not null, default: `CURRENT_TIMESTAMP`]
+  "endpoint" varchar(50) [not null]
+  "data" text [not null]
+  "status" varchar(50) [not null]
+}
+
+Table "vce_oauth_data" {
+  "id" int8 [pk, not null, increment]
+  "access_token" text [not null]
+  "client_id" text [not null]
+  "user_id" text [not null]
+  "expires" int4 [not null]
+  "scope" text [not null]
+  "id_token" text [not null]
+}
+
+Table "vce_sessions" {
+  "session_id" varchar(255) [pk, not null]
+  "session_expires" timestamptz [not null]
+  "session_data" text
+}
+
+Table "vce_site_meta" {
+  "id" int8 [pk, not null, increment]
+  "meta_key" varchar(255) [not null]
+  "meta_value" text [not null]
+  "minutia" varchar(255) [not null]
+}
+
+Table "vce_temp_components" {
+  "component_id" int8 [not null, increment]
+  "parent_id" int8 [not null, default: '0']
+  "sequence" int8 [not null, default: '0']
+  "alias_id" int8 [not null, default: '0']
+  "url" text
+  "description" text
+  "info" text
+  "pbc_asset" text
+  "status" varchar(255)
+  "code" text
+  "taxonomy" text
+  "pbc_members" text
+  "created_at" text
+  "updated_at" text
+  "created_by" text
+  "recipe" text
+  "title" text
+  "type" text
+  "role_access" text
+  "content_create" text
+  "content_delete" text
+  "content_edit" text
+  "repudiated_url" text
+  "recipe_name" text
+  "timestamp" text
+  "template" text
+  "components_limit" text
+  "media_type" text
+  "prototype_id" text
+  "text" text
+  "cqelcoach_group" text
+  "parent_url" text
+  "cop_members" text
+  "update_created_at" text
+  "recipe_key" text
+  "assignment_category" text
+  "instructions" text
+  "path" text
+  "on_cloudfront" text
+  "published" text
+  "job_id" text
+  "name" text
+  "user_id" text
+  "hide_cop_members" text
+  "hide_cop_resources" text
+  "hide_video_conferencing" text
+  "disable_opt_out" text
+  "cop_group_admin" text
+  "cop_topic_creation" text
+  "cop_asset_creation" text
+  "cop_admins" text
+  "procedure" text
+  "ratings_id" text
+  "idrating" text
+  "idclassroom" text
+  "idvhresponse" text
+  "reflection_input" text
+  "updated_on" text
+  "link" text
+  "order_by" text
+  "order_direction" text
+  "pbc_roles" text
+  "partnership_filters" text
+
+  Indexes {
+    alias_id [type: btree, name: "idx_67625_alias_id"]
+    assignment_category [type: btree, name: "idx_67625_assignment_category"]
+    component_id [type: btree, name: "idx_67625_component_id"]
+    components_limit [type: btree, name: "idx_67625_components_limit"]
+    content_create [type: btree, name: "idx_67625_content_create"]
+    content_delete [type: btree, name: "idx_67625_content_delete"]
+    content_edit [type: btree, name: "idx_67625_content_edit"]
+    cop_admins [type: btree, name: "idx_67625_cop_admins"]
+    cop_asset_creation [type: btree, name: "idx_67625_cop_asset_creation"]
+    cop_group_admin [type: btree, name: "idx_67625_cop_group_admin"]
+    cop_members [type: btree, name: "idx_67625_cop_members"]
+    cop_topic_creation [type: btree, name: "idx_67625_cop_topic_creation"]
+    cqelcoach_group [type: btree, name: "idx_67625_cqelcoach_group"]
+    created_by [type: btree, name: "idx_67625_created_by"]
+    disable_opt_out [type: btree, name: "idx_67625_disable_opt_out"]
+    hide_cop_members [type: btree, name: "idx_67625_hide_cop_members"]
+    hide_cop_resources [type: btree, name: "idx_67625_hide_cop_resources"]
+    hide_video_conferencing [type: btree, name: "idx_67625_hide_video_conferencing"]
+    idclassroom [type: btree, name: "idx_67625_idclassroom"]
+    idrating [type: btree, name: "idx_67625_idrating"]
+    idvhresponse [type: btree, name: "idx_67625_idvhresponse"]
+    instructions [type: btree, name: "idx_67625_instructions"]
+    job_id [type: btree, name: "idx_67625_job_id"]
+    link [type: btree, name: "idx_67625_link"]
+    media_type [type: btree, name: "idx_67625_media_type"]
+    name [type: btree, name: "idx_67625_name"]
+    on_cloudfront [type: btree, name: "idx_67625_on_cloudfront"]
+    order_by [type: btree, name: "idx_67625_order_by"]
+    order_direction [type: btree, name: "idx_67625_order_direction"]
+    parent_id [type: btree, name: "idx_67625_parent_id"]
+    parent_url [type: btree, name: "idx_67625_parent_url"]
+    partnership_filters [type: btree, name: "idx_67625_partnership_filters"]
+    path [type: btree, name: "idx_67625_path"]
+    pbc_roles [type: btree, name: "idx_67625_pbc_roles"]
+    procedure [type: btree, name: "idx_67625_procedure"]
+    prototype_id [type: btree, name: "idx_67625_prototype_id"]
+    published [type: btree, name: "idx_67625_published"]
+    ratings_id [type: btree, name: "idx_67625_ratings_id"]
+    recipe [type: btree, name: "idx_67625_recipe"]
+    recipe_key [type: btree, name: "idx_67625_recipe_key"]
+    recipe_name [type: btree, name: "idx_67625_recipe_name"]
+    reflection_input [type: btree, name: "idx_67625_reflection_input"]
+    repudiated_url [type: btree, name: "idx_67625_repudiated_url"]
+    role_access [type: btree, name: "idx_67625_role_access"]
+    status [type: btree, name: "idx_67625_status"]
+    template [type: btree, name: "idx_67625_template"]
+    text [type: btree, name: "idx_67625_text"]
+    timestamp [type: btree, name: "idx_67625_timestamp"]
+    title [type: btree, name: "idx_67625_title"]
+    type [type: btree, name: "idx_67625_type"]
+    update_created_at [type: btree, name: "idx_67625_update_created_at"]
+    updated_on [type: btree, name: "idx_67625_updated_on"]
+    user_id [type: btree, name: "idx_67625_user_id"]
+  }
+}
+
+Table "vce_temp_members" {
+  "pbc_id" int8 [not null]
+  "user_id" int8 [not null]
+  "role" varchar(255) [not null]
+
+  Indexes {
+    pbc_id [type: btree, name: "idx_67634_pbc_id"]
+    role [type: btree, name: "idx_67634_role"]
+    user_id [type: btree, name: "idx_67634_user_id"]
+  }
+}
+
+Table "vce_temp_users" {
+  "user_id" int8
+  "role_id" int8
+  "site_name" text
+  "organization" text
+  "age_group" text
+  "county" text
+  "setting" text
+  "region_id" text
+  "first_login" timestamptz
+  "last_login" timestamptz
+
+  Indexes {
+    user_id [type: btree, name: "idx_67637_user_id"]
+  }
+}
+
+Table "vce_uploads" {
+  "id" int8 [pk, not null, increment]
+  "start_time" int8 [not null]
+  "end_time" int8 [not null]
+  "user_agent" varchar(255) [not null]
+  "location" varchar(255) [not null]
+  "user_id" int8 [not null]
+  "file_name" varchar(255) [not null]
+  "file_type" varchar(255) [not null]
+  "file_size" int8 [not null]
+  "chunks_total" int8 [not null]
+  "chunks_resumed" int8 [not null]
+  "chunks_completed" int8 [not null]
+  "uploaded_size" int8 [not null]
+  "upload_id" varchar(255) [not null]
+  "etags" text [not null]
+  "destination" varchar(255) [not null]
+}
+
+Table "vce_uploads_s3" {
+  "id" int8 [pk, not null, increment]
+  "start_time" int8 [not null]
+  "end_time" int8 [not null]
+  "user_agent" varchar(255) [not null]
+  "location" varchar(255) [not null]
+  "user_id" int8 [not null]
+  "file_name" varchar(255) [not null]
+  "file_type" varchar(255) [not null]
+  "file_size" int8 [not null]
+  "chunks_total" int8 [not null]
+  "chunks_resumed" int8 [not null]
+  "chunks_completed" int8 [not null]
+  "uploaded_size" int8 [not null]
+  "destination" varchar(255)
+  "status" varchar(255) [not null]
+}
+
+Table "vce_users" {
+  "user_id" int8 [pk, not null, increment]
+  "vector" varchar(255) [not null]
+  "hash" varchar(255) [not null]
+  "role_id" int8 [not null]
+
+  Indexes {
+    user_id [type: btree, name: "idx_67657_user_id"]
+  }
+}
+
+Table "vce_users_log" {
+  "user_id" int8 [not null]
+  "log_time" timestamptz [not null, default: `CURRENT_TIMESTAMP`]
+  "log_info" text
+}
+
+Table "vce_users_meta" {
+  "id" int8 [pk, not null, increment]
+  "user_id" int8 [not null]
+  "meta_key" varchar(255) [not null]
+  "meta_value" text [not null]
+  "minutia" varchar(255) [not null]
+
+  Indexes {
+    meta_key [type: btree, name: "idx_67670_meta_key"]
+    user_id [type: btree, name: "idx_67670_user_id"]
+  }
+}
+
+Ref "auth_group_permissio_permission_id_84c5c92e_fk_auth_perm":"auth_permission"."id" < "auth_group_permissions"."permission_id"
+
+Ref "auth_group_permissions_group_id_b120cbf9_fk_auth_group_id":"auth_group"."id" < "auth_group_permissions"."group_id"
+
+Ref "auth_permission_content_type_id_2f476e4b_fk_django_co":"django_content_type"."id" < "auth_permission"."content_type_id"
+
+Ref "auth_user_groups_group_id_97559544_fk_auth_group_id":"auth_group"."id" < "auth_user_groups"."group_id" [delete: cascade]
+
+Ref "auth_user_groups_user_id_6a12ed8b_fk_auth_user_id":"auth_user"."id" < "auth_user_groups"."user_id" [delete: cascade]
+
+Ref "auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm":"auth_permission"."id" < "auth_user_user_permissions"."permission_id"
+
+Ref "auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id":"auth_user"."id" < "auth_user_user_permissions"."user_id"
+
+Ref "authentication_methods_authentication_types_id_fkey":"authentication_types"."id" < "authentication_methods"."authentication_types_id"
+
+Ref "authentication_methods_organizations_id_fkey":"organizations"."id" < "authentication_methods"."organizations_id"
+
+Ref "django_admin_log_content_type_id_c4bce8eb_fk_django_co":"django_content_type"."id" < "django_admin_log"."content_type_id"
+
+Ref "django_admin_log_user_id_c564eba6_fk_auth_user_id":"auth_user"."id" < "django_admin_log"."user_id"
+
+Ref "dra_org_subdivisions_dra_organizations_id_fkey":"dra_organizations"."id" < "dra_org_subdivisions"."dra_organizations_id"
+
+Ref "dra_org_usernames_dra_org_uids_id_fkey":"dra_uids"."id" < "dra_org_usernames"."dra_org_uids_id"
+
+Ref "dra_organizations_roles_organizations_id_fkey":"organizations"."id" < "dra_organizations_roles"."organizations_id"
+
+Ref "j_auth_user_x_user_uids_auth_user_id_fkey":"auth_user"."id" < "j_auth_user_x_user_uids"."auth_user_id"
+
+Ref "j_auth_user_x_user_uids_user_uids_id_fkey":"user_uids"."id" < "j_auth_user_x_user_uids"."user_uids_id"
+
+Ref "lti1p3_tool_tool_key_id_608be89f_fk":"lti1p3_tool_key"."id" < "lti1p3_tool"."tool_key_id"
+
+Ref "token_blacklist_blacklistedtoken_token_id_3cc7fe56_fk":"token_blacklist_outstandingtoken"."id" < "token_blacklist_blacklistedtoken"."token_id"
+
+Ref "token_blacklist_outs_user_id_83bc629a_fk_auth_user":"auth_user"."id" < "token_blacklist_outstandingtoken"."user_id"
+
+Ref "user_uids_authentication_methods_id_fkey":"authentication_methods"."id" < "user_uids"."authentication_methods_id"
+
+Ref "user_uids_organizations_id_fkey":"dra_organizations"."id" < "user_uids"."organizations_id"
