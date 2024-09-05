@@ -18,11 +18,11 @@ uuid_int = 12345678901234567890
 @pytest.mark.parametrize("unix_timestamp", [unix_timestamp]) # Allows us to define a single test with multiple potential inputs
 def test_collaboraendpoint(unix_timestamp):
     # Create an instance of CollaboraEndpoint
-    dashboard = CollaboraEndpoint(
-        created_at=unix_timestamp,
-        created_by=int(12345678901234567890),
-        title="Test CollaboraEndpoint Title",
-        type_="collaboraendpoint"
+    dashboard = CollaboraEndpoint.model_validate(
+        {"created_at": unix_timestamp,
+        "created_by": int(12345678901234567890),
+        "title": "Test CollaboraEndpoint Title",
+        "type_": "collaboraendpoint"}
     )
 
     # Assert that the fields are correctly set
@@ -61,7 +61,10 @@ def test_collaboraendpoint_name_max_length():
     with pytest.raises(ValueError):
         CollaboraEndpoint.model_validate({"created_by": long_name})
     # Validate the created_at
-    with pytest.raises(ValueError):
+    with pytest.raises(OverflowError):
+        CollaboraEndpoint.model_validate({"created_at": long_num})
+    # Validate the created_at
+    with pytest.raises(TypeError):
         CollaboraEndpoint.model_validate({"created_at": long_name})
     # Validate the type_
     with pytest.raises(ValueError):

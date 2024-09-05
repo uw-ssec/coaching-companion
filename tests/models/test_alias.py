@@ -18,11 +18,11 @@ uuid_int = 12345678901234567890
 @pytest.mark.parametrize("unix_timestamp", [unix_timestamp]) # Allows us to define a single test with multiple potential inputs
 def test_alias(unix_timestamp):
     # Create an instance of Alias
-    dashboard = Alias(
-        created_at=unix_timestamp,
-        created_by=int(12345678901234567890),
-        title="Test Alias Title",
-        type_="alias"
+    dashboard = Alias.model_validate(
+        {"created_at": unix_timestamp,
+        "created_by": int(12345678901234567890),
+        "title": "Test Alias Title",
+        "type_": "alias"}
     )
 
     # Assert that the fields are correctly set
@@ -61,7 +61,10 @@ def test_alias_name_max_length():
     with pytest.raises(ValueError):
         Alias.model_validate({"created_by": long_name})
     # Validate the created_at
-    with pytest.raises(ValueError):
+    with pytest.raises(OverflowError):
+        Alias.model_validate({"created_at": long_num})
+    # Validate the created_at
+    with pytest.raises(TypeError):
         Alias.model_validate({"created_at": long_name})
     # Validate the type_
     with pytest.raises(ValueError):

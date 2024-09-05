@@ -49,4 +49,4 @@ class BaseTableModel(SQLModel):
     type_: Optional[str] = Field(default=None, sa_type=String(50), max_length=50)  # Optional varchar(50) field
 
     # Validator for the created_at field to convert Unix timestamp to datetime.
-    _created_at = field_validator('created_at')(convert_timestamp_to_datetime)
+    _created_at = field_validator('created_at', mode="before")(convert_timestamp_to_datetime)

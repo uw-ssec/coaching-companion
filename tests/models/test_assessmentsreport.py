@@ -18,11 +18,11 @@ uuid_int = 12345678901234567890
 @pytest.mark.parametrize("unix_timestamp", [unix_timestamp]) # Allows us to define a single test with multiple potential inputs
 def test_assessmentsreport(unix_timestamp):
     # Create an instance of AssessmentsReport
-    dashboard = AssessmentsReport(
-        created_at=unix_timestamp,
-        created_by=int(12345678901234567890),
-        title="Test AssessmentsReport Title",
-        type_="assessmentsreport"
+    dashboard = AssessmentsReport.model_validate(
+        {"created_at": unix_timestamp,
+        "created_by": int(12345678901234567890),
+        "title": "Test AssessmentsReport Title",
+        "type_": "assessmentsreport"}
     )
 
     # Assert that the fields are correctly set
@@ -61,7 +61,10 @@ def test_assessmentsreport_name_max_length():
     with pytest.raises(ValueError):
         AssessmentsReport.model_validate({"created_by": long_name})
     # Validate the created_at
-    with pytest.raises(ValueError):
+    with pytest.raises(OverflowError):
+        AssessmentsReport.model_validate({"created_at": long_num})
+    # Validate the created_at
+    with pytest.raises(TypeError):
         AssessmentsReport.model_validate({"created_at": long_name})
     # Validate the type_
     with pytest.raises(ValueError):

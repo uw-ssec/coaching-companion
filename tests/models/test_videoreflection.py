@@ -18,11 +18,11 @@ uuid_int = 12345678901234567890
 @pytest.mark.parametrize("unix_timestamp", [unix_timestamp]) # Allows us to define a single test with multiple potential inputs
 def test_videoreflection(unix_timestamp):
     # Create an instance of VideoReflection
-    dashboard = VideoReflection(
-        created_at=unix_timestamp,
-        created_by=int(12345678901234567890),
-        title="Test VideoReflection Title",
-        type_="videoreflection"
+    dashboard = VideoReflection.model_validate(
+        {"created_at": unix_timestamp,
+        "created_by": int(12345678901234567890),
+        "title": "Test VideoReflection Title",
+        "type_": "videoreflection"}
     )
 
     # Assert that the fields are correctly set
@@ -61,7 +61,10 @@ def test_videoreflection_name_max_length():
     with pytest.raises(ValueError):
         VideoReflection.model_validate({"created_by": long_name})
     # Validate the created_at
-    with pytest.raises(ValueError):
+    with pytest.raises(OverflowError):
+        VideoReflection.model_validate({"created_at": long_num})
+    # Validate the created_at
+    with pytest.raises(TypeError):
         VideoReflection.model_validate({"created_at": long_name})
     # Validate the type_
     with pytest.raises(ValueError):

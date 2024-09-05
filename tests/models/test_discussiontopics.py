@@ -18,11 +18,11 @@ uuid_int = 12345678901234567890
 @pytest.mark.parametrize("unix_timestamp", [unix_timestamp]) # Allows us to define a single test with multiple potential inputs
 def test_discussiontopics(unix_timestamp):
     # Create an instance of DiscussionTopics
-    dashboard = DiscussionTopics(
-        created_at=unix_timestamp,
-        created_by=int(12345678901234567890),
-        title="Test DiscussionTopics Title",
-        type_="discussiontopics"
+    dashboard = DiscussionTopics.model_validate(
+        {"created_at": unix_timestamp,
+        "created_by": int(12345678901234567890),
+        "title": "Test DiscussionTopics Title",
+        "type_": "discussiontopics"}
     )
 
     # Assert that the fields are correctly set
@@ -61,7 +61,10 @@ def test_discussiontopics_name_max_length():
     with pytest.raises(ValueError):
         DiscussionTopics.model_validate({"created_by": long_name})
     # Validate the created_at
-    with pytest.raises(ValueError):
+    with pytest.raises(OverflowError):
+        DiscussionTopics.model_validate({"created_at": long_num})
+    # Validate the created_at
+    with pytest.raises(TypeError):
         DiscussionTopics.model_validate({"created_at": long_name})
     # Validate the type_
     with pytest.raises(ValueError):

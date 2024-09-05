@@ -18,11 +18,11 @@ uuid_int = 12345678901234567890
 @pytest.mark.parametrize("unix_timestamp", [unix_timestamp]) # Allows us to define a single test with multiple potential inputs
 def test_limit(unix_timestamp):
     # Create an instance of Limit
-    dashboard = Limit(
-        created_at=unix_timestamp,
-        created_by=int(12345678901234567890),
-        title="Test Limit Title",
-        type_="limit"
+    dashboard = Limit.model_validate(
+        {"created_at": unix_timestamp,
+        "created_by": int(12345678901234567890),
+        "title": "Test Limit Title",
+        "type_": "limit"}
     )
 
     # Assert that the fields are correctly set
@@ -61,7 +61,10 @@ def test_limit_name_max_length():
     with pytest.raises(ValueError):
         Limit.model_validate({"created_by": long_name})
     # Validate the created_at
-    with pytest.raises(ValueError):
+    with pytest.raises(OverflowError):
+        Limit.model_validate({"created_at": long_num})
+    # Validate the created_at
+    with pytest.raises(TypeError):
         Limit.model_validate({"created_at": long_name})
     # Validate the type_
     with pytest.raises(ValueError):

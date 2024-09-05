@@ -18,11 +18,11 @@ uuid_int = 12345678901234567890
 @pytest.mark.parametrize("unix_timestamp", [unix_timestamp]) # Allows us to define a single test with multiple potential inputs
 def test_copgroups(unix_timestamp):
     # Create an instance of CopGroups
-    dashboard = CopGroups(
-        created_at=unix_timestamp,
-        created_by=int(12345678901234567890),
-        title="Test CopGroups Title",
-        type_="copgroups"
+    dashboard = CopGroups.model_validate(
+        {"created_at": unix_timestamp,
+        "created_by": int(12345678901234567890),
+        "title": "Test CopGroups Title",
+        "type_": "copgroups"}
     )
 
     # Assert that the fields are correctly set
@@ -61,7 +61,10 @@ def test_copgroups_name_max_length():
     with pytest.raises(ValueError):
         CopGroups.model_validate({"created_by": long_name})
     # Validate the created_at
-    with pytest.raises(ValueError):
+    with pytest.raises(OverflowError):
+        CopGroups.model_validate({"created_at": long_num})
+    # Validate the created_at
+    with pytest.raises(TypeError):
         CopGroups.model_validate({"created_at": long_name})
     # Validate the type_
     with pytest.raises(ValueError):

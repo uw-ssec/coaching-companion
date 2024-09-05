@@ -18,11 +18,11 @@ uuid_int = 12345678901234567890
 @pytest.mark.parametrize("unix_timestamp", [unix_timestamp]) # Allows us to define a single test with multiple potential inputs
 def test_userlogallattributes(unix_timestamp):
     # Create an instance of UserLogAllAttributes
-    dashboard = UserLogAllAttributes(
-        created_at=unix_timestamp,
-        created_by=int(12345678901234567890),
-        title="Test UserLogAllAttributes Title",
-        type_="userlogallattributes"
+    dashboard = UserLogAllAttributes.model_validate(
+        {"created_at": unix_timestamp,
+        "created_by": int(12345678901234567890),
+        "title": "Test UserLogAllAttributes Title",
+        "type_": "userlogallattributes"}
     )
 
     # Assert that the fields are correctly set
@@ -61,7 +61,10 @@ def test_userlogallattributes_name_max_length():
     with pytest.raises(ValueError):
         UserLogAllAttributes.model_validate({"created_by": long_name})
     # Validate the created_at
-    with pytest.raises(ValueError):
+    with pytest.raises(OverflowError):
+        UserLogAllAttributes.model_validate({"created_at": long_num})
+    # Validate the created_at
+    with pytest.raises(TypeError):
         UserLogAllAttributes.model_validate({"created_at": long_name})
     # Validate the type_
     with pytest.raises(ValueError):
