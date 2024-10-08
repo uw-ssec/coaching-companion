@@ -18,3 +18,48 @@ with all the necessary tools and extensions.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/uw-ssec/coaching-companion?quickstart=1)
 
+## Testing
+
+### Running Tests with Pytest
+
+To run your tests using pytest from the terminal, follow these steps:
+
+1. Navigate to Your Project Directory: Open your terminal and navigate to the root directory of your project where your tests are located.
+
+Run pytest: Execute the following command to run all tests:
+
+```bash
+pytest
+```
+
+2. Run Specific Tests: To run a specific test file or directory, provide the path:
+
+```bash
+pytest path/to/test_file.py
+```
+
+3. View Detailed Output: For more detailed output, use the -v (verbose) flag:
+    
+```bash
+pytest -v
+```
+
+4. Generate a Test Report: To generate a test report, you can use the --junitxml option:
+
+```bash
+pytest --junitxml=report.xml
+```
+
+By following these steps, you can easily run and manage your tests using pytest from the terminal.
+
+### Generate List of SQLModels [Optional]
+
+Access the `tests/utils/generate_list_of_models.ipynb` notebook to generate a list of SQLModels from the database schema. This step is optional and only required if you want to update mulitple models. This notebook allows you to retrieve models in batches.
+
+The output of this notebook is a list of SQLModels in a YAML file that can be used to generate unit tests.
+
+### Generate Unit Tests from Templates
+
+Access the `tests/utils/generate_test_from_template.ipynb` notebook to generate unit tests from the templates. This step is required if you want to update mulitple models. This notebook allows you to generate tests in batches. Currently, the template is based on models inheriting the BaseTableModel class, and you will need to add a new template for other models.
+
+As written, the notebook will generate unit tests for the models in the `tests/models/` directory.
